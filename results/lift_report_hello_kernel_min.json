@@ -1,0 +1,108 @@
+{
+  "lifter_version": "2.3.0",
+  "status": "FULL_SUCCESS",
+  "input_file": "hello_kernel_min.elf",
+  "input_sha256": "c0c4a947a0bd425697afd34265953d0c67cbc65d82a801f74eab626284524209",
+  "input_size_bytes": 2080,
+  "entry_point": "0x00100000",
+  "gp_value": "0x00108240",
+  "flags": "0x20924001",
+  "functions_count": 11,
+  "total_instructions": 100,
+  "lifted_instructions": 100,
+  "blockers_count": 0,
+  "lift_coverage_percent": 100.0,
+  "blocker_categories": {},
+  "indirect_summary": {
+    "total_indirect_sites": 0,
+    "statically_resolved_count": 0,
+    "declared_indirect_blockers_count": 0,
+    "resolved_by_kind": {}
+  },
+  "family_counts": {
+    "R5900_MMI": 1,
+    "ALU_32_64": 46,
+    "R5900_QUADWORD_MEM": 2,
+    "CONTROL_FLOW": 22,
+    "NOP": 9,
+    "COP0_SYSTEM": 3,
+    "SYSTEM_CALL": 6,
+    "LOAD_STORE": 10,
+    "MEMORY_BARRIER_SYNC": 1
+  },
+  "mnemonic_counts": {
+    "pcpyld": 1,
+    "lui": 9,
+    "addiu": 16,
+    "sq": 1,
+    "sltu": 1,
+    "bne": 1,
+    "nop": 9,
+    "mfc0": 1,
+    "ori": 1,
+    "mtc0": 1,
+    "daddu": 2,
+    "jal": 9,
+    "addu": 12,
+    "j": 2,
+    "syscall": 6,
+    "jr": 8,
+    "daddiu": 5,
+    "sd": 4,
+    "sync.l": 1,
+    "ei": 1,
+    "lbu": 1,
+    "beq": 1,
+    "bgez": 1,
+    "sw": 2,
+    "ld": 3,
+    "lq": 1
+  },
+  "syscalls_detected_count": 6,
+  "syscalls_detected": [
+    {
+      "vaddr": "0x00100074",
+      "func": "SetupThread",
+      "raw_num": 60,
+      "hex_abs": "0x3c",
+      "name": "RFU060_SetupThread"
+    },
+    {
+      "vaddr": "0x00100084",
+      "func": "SetupHeap",
+      "raw_num": 61,
+      "hex_abs": "0x3d",
+      "name": "RFU061_SetupHeap"
+    },
+    {
+      "vaddr": "0x00100094",
+      "func": "FlushCache",
+      "raw_num": 100,
+      "hex_abs": "0x64",
+      "name": "FlushCache"
+    },
+    {
+      "vaddr": "0x001000a4",
+      "func": "Exit",
+      "raw_num": 4,
+      "hex_abs": "0x04",
+      "name": "Exit"
+    },
+    {
+      "vaddr": "0x001000b4",
+      "func": "ExitThread",
+      "raw_num": 35,
+      "hex_abs": "0x23",
+      "name": "ExitThread"
+    },
+    {
+      "vaddr": "0x00100138",
+      "func": "_ps2sdk_puts",
+      "raw_num": 124,
+      "hex_abs": "0x7c",
+      "name": "Deci2Call"
+    }
+  ],
+  "statically_resolved_indirect_sites": [],
+  "blockers": []
+}

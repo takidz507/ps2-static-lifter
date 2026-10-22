@@ -1,0 +1,17 @@
+// Top-level Gradle settings for PS2 Lifted Graph (Milestone 2.3 Part 4)
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "PS2LiftedGraph"
+include ':app'

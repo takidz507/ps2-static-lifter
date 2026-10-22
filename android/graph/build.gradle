@@ -1,0 +1,4 @@
+// Top-level build file for PS2 Lifted Graph (Milestone 2.3 Part 4)
+plugins {
+    id 'com.android.application' version '8.2.2' apply false
+}

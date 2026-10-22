@@ -1,0 +1,29 @@
+====================================================================================================
+PS2-LIFTER Milestone 2.3 Part 3 — Frame 3 Pre-Registered Pixel Probe Verification (`PREREG-M23.md`)
+====================================================================================================
+Target ELF          : graph.elf (entry=0x00100b20, SHA-256=4220f58a2826000f496420b4c2c1a97b1b769a88079f08af9261eaeb6ada7239)
+Stop Reason         : FRAME_LIMIT (PASS) at PC=0x001013f0
+Frames Completed    : 3 / 3
+Instructions Retired: 46443 (FPU ops retired: 17)
+GS Boundary Stats   : GIF DMA Packets=4, GIF Tags=11, GS Reg Writes=64, Primitives=18, Pixels Filled=282144
+Framebuffer Geometry: 512x512 PSMCT32 (FBP=0x0, FBW=8, OFX=0x8000, OFY=0x8000)
+----------------------------------------------------------------------------------------------------
+ID                        | (X, Y)     | ACTUAL RGBA         | ACTUAL HEX | EXPECTED HEX | VERDICT
+----------------------------------------------------------------------------------------------------
+PIXEL_1_SPRITE1_ORIGIN    | (  0,   0) | (  0,   0, 255, 128) | 0x80ff0000 | 0x80ff0000   | PASS
+PIXEL_2_SPRITE1_BAND      | ( 10,   5) | (  0,   0, 255, 128) | 0x80ff0000 | 0x80ff0000   | PASS
+PIXEL_3_OVERLAP_START     | ( 20,  10) | ( 10,   0, 245, 128) | 0x80f5000a | 0x80f5000a   | PASS
+PIXEL_4_OVERLAP_CENTER    | ( 50,  50) | ( 10,   0, 245, 128) | 0x80f5000a | 0x80f5000a   | PASS
+PIXEL_5_SPRITE2_ONLY      | (110, 105) | ( 10,   0, 245, 128) | 0x80f5000a | 0x80f5000a   | PASS
+PIXEL_6_OUTSIDE_SPRITE2   | (120, 110) | (  0,   0,   0, 128) | 0x80000000 | 0x80000000   | PASS
+PIXEL_7_CLEAR_MID         | (256, 256) | (  0,   0,   0, 128) | 0x80000000 | 0x80000000   | PASS
+PIXEL_8_CLEAR_END         | (511, 511) | (  0,   0,   0, 128) | 0x80000000 | 0x80000000   | PASS
+----------------------------------------------------------------------------------------------------
+Framebuffer Full-Surface Histogram (512 x 512 = 262,144 pixels):
+  - Clear background   0x80000000 (R=  0, G=  0, B=  0, A=128) : 249344 pixels (expected: 249344)
+  - Frame 2 sprite     0x80FF0000 (R=  0, G=  0, B=255, A=128) :   2800 pixels (expected:   2800)
+  - Frame 3 sprite     0x80F5000A (R= 10, G=  0, B=245, A=128) :  10000 pixels (expected:  10000)
+  - Any other color                                            :      0 pixels (expected:      0)
+----------------------------------------------------------------------------------------------------
+Pre-Registered Probe Result: 8 / 8 PASSED | Histogram Exact Match: YES | Overall Verdict: PASS
+====================================================================================================

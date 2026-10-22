@@ -1,0 +1,2899 @@
+{
+  "target": {
+    "file": "graph.elf",
+    "size_bytes": 1379708,
+    "sha256": "4220f58a2826000f496420b4c2c1a97b1b769a88079f08af9261eaeb6ada7239",
+    "entry_point": "0x00100b20",
+    "e_flags": "0x20920025",
+    "text_vaddr": "0x00100000",
+    "text_size_bytes": 137680,
+    "text_size_hex": "0x219d0",
+    "functions_count": 504,
+    "total_instructions": 34420
+  },
+  "m1_baseline": {
+    "decoded_instructions": 33875,
+    "undecoded_instructions": 545,
+    "decode_coverage_pct": 98.42,
+    "undecoded_by_category": {
+      "COP1_FPU": 288,
+      "UNKNOWN_OPCODE": 170,
+      "MEMORY_BARRIER_SYNC": 41,
+      "COP0_SYSTEM": 26,
+      "CACHE_OP": 13,
+      "R5900_MMI_SIMD": 4,
+      "R5900_QUADWORD_MEM": 3
+    },
+    "unique_syscalls_detected": 48,
+    "total_syscall_sites": 52
+  },
+  "lifter_v22_baseline": {
+    "lifted_instructions": 33921,
+    "total_instructions": 34420,
+    "lift_coverage_pct": 98.55,
+    "blockers_total": 499,
+    "blocker_categories": {
+      "UNLIFTED_INSN": 463,
+      "INDIRECT": 36
+    },
+    "indirect_summary": {
+      "total_indirect_sites": 53,
+      "statically_resolved_count": 17,
+      "declared_indirect_blockers_count": 36,
+      "resolved_by_kind": {
+        "CONST_LUI_ADDIU": 5,
+        "JUMP_TABLE": 5,
+        "STATIC_DATA_PTR": 7
+      }
+    }
+  },
+  "lifter_v23_result": {
+    "lifted_instructions": 34384,
+    "total_instructions": 34420,
+    "lift_coverage_pct": 99.9,
+    "blockers_total": 36,
+    "blocker_categories": {
+      "INDIRECT": 36
+    },
+    "unlifted_insn_count": 0,
+    "indirect_summary": {
+      "total_indirect_sites": 53,
+      "statically_resolved_count": 17,
+      "declared_indirect_blockers_count": 36,
+      "resolved_by_kind": {
+        "CONST_LUI_ADDIU": 5,
+        "JUMP_TABLE": 5,
+        "STATIC_DATA_PTR": 7
+      }
+    }
+  },
+  "unknown_opcode_170_census": {
+    "op=0x31 (lwc1)": {
+      "count": 113,
+      "functions_affected": [
+        "__ieee754_rem_pio2f",
+        "__kernel_cosf",
+        "__kernel_rem_pio2f",
+        "__kernel_sinf",
+        "cosf",
+        "draw_clear",
+        "floorf",
+        "scalbnf",
+        "sinf"
+      ],
+      "example_sites": [
+        {
+          "vaddr": "0x00101868",
+          "word": "0xc44154e8",
+          "func": "draw_clear",
+          "disasm": "lwc1 $f1, 21736($v0)"
+        },
+        {
+          "vaddr": "0x00101870",
+          "word": "0xc44054e4",
+          "func": "draw_clear",
+          "disasm": "lwc1 $f0, 21732($v0)"
+        },
+        {
+          "vaddr": "0x00101934",
+          "word": "0xc44254ec",
+          "func": "draw_clear",
+          "disasm": "lwc1 $f2, 21740($v0)"
+        },
+        {
+          "vaddr": "0x0010194c",
+          "word": "0xc44154f0",
+          "func": "draw_clear",
+          "disasm": "lwc1 $f1, 21744($v0)"
+        },
+        {
+          "vaddr": "0x0011c230",
+          "word": "0xc7ac0000",
+          "func": "cosf",
+          "disasm": "lwc1 $f12, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011c238",
+          "word": "0xc7ad0004",
+          "func": "cosf",
+          "disasm": "lwc1 $f13, 4($sp)"
+        },
+        {
+          "vaddr": "0x0011c2f8",
+          "word": "0xc7ac0000",
+          "func": "sinf",
+          "disasm": "lwc1 $f12, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011c300",
+          "word": "0xc7ad0004",
+          "func": "sinf",
+          "disasm": "lwc1 $f13, 4($sp)"
+        },
+        {
+          "vaddr": "0x0011c3ac",
+          "word": "0xc4615464",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f1, 21604($v1)"
+        },
+        {
+          "vaddr": "0x0011c3b4",
+          "word": "0xc4605468",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f0, 21608($v1)"
+        }
+      ],
+      "all_sites": [
+        {
+          "vaddr": "0x00101868",
+          "word": "0xc44154e8",
+          "func": "draw_clear",
+          "disasm": "lwc1 $f1, 21736($v0)"
+        },
+        {
+          "vaddr": "0x00101870",
+          "word": "0xc44054e4",
+          "func": "draw_clear",
+          "disasm": "lwc1 $f0, 21732($v0)"
+        },
+        {
+          "vaddr": "0x00101934",
+          "word": "0xc44254ec",
+          "func": "draw_clear",
+          "disasm": "lwc1 $f2, 21740($v0)"
+        },
+        {
+          "vaddr": "0x0010194c",
+          "word": "0xc44154f0",
+          "func": "draw_clear",
+          "disasm": "lwc1 $f1, 21744($v0)"
+        },
+        {
+          "vaddr": "0x0011c230",
+          "word": "0xc7ac0000",
+          "func": "cosf",
+          "disasm": "lwc1 $f12, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011c238",
+          "word": "0xc7ad0004",
+          "func": "cosf",
+          "disasm": "lwc1 $f13, 4($sp)"
+        },
+        {
+          "vaddr": "0x0011c2f8",
+          "word": "0xc7ac0000",
+          "func": "sinf",
+          "disasm": "lwc1 $f12, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011c300",
+          "word": "0xc7ad0004",
+          "func": "sinf",
+          "disasm": "lwc1 $f13, 4($sp)"
+        },
+        {
+          "vaddr": "0x0011c3ac",
+          "word": "0xc4615464",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f1, 21604($v1)"
+        },
+        {
+          "vaddr": "0x0011c3b4",
+          "word": "0xc4605468",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f0, 21608($v1)"
+        },
+        {
+          "vaddr": "0x0011c3c4",
+          "word": "0xc460546c",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f0, 21612($v1)"
+        },
+        {
+          "vaddr": "0x0011c3d4",
+          "word": "0xc4605470",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f0, 21616($v1)"
+        },
+        {
+          "vaddr": "0x0011c3e4",
+          "word": "0xc4605474",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f0, 21620($v1)"
+        },
+        {
+          "vaddr": "0x0011c3f4",
+          "word": "0xc4605478",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f0, 21624($v1)"
+        },
+        {
+          "vaddr": "0x0011c414",
+          "word": "0xc440547c",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f0, 21628($v0)"
+        },
+        {
+          "vaddr": "0x0011c428",
+          "word": "0xc4405460",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f0, 21600($v0)"
+        },
+        {
+          "vaddr": "0x0011c440",
+          "word": "0xc4815464",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f1, 21604($a0)"
+        },
+        {
+          "vaddr": "0x0011c448",
+          "word": "0xc4805468",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f0, 21608($a0)"
+        },
+        {
+          "vaddr": "0x0011c464",
+          "word": "0xc4a0546c",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f0, 21612($a1)"
+        },
+        {
+          "vaddr": "0x0011c474",
+          "word": "0xc4a05470",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f0, 21616($a1)"
+        },
+        {
+          "vaddr": "0x0011c484",
+          "word": "0xc4a05474",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f0, 21620($a1)"
+        },
+        {
+          "vaddr": "0x0011c494",
+          "word": "0xc4a05478",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f0, 21624($a1)"
+        },
+        {
+          "vaddr": "0x0011c4d4",
+          "word": "0xc4805460",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f0, 21600($a0)"
+        },
+        {
+          "vaddr": "0x0011c4e8",
+          "word": "0xc443547c",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f3, 21628($v0)"
+        },
+        {
+          "vaddr": "0x0011c51c",
+          "word": "0xc443547c",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f3, 21628($v0)"
+        },
+        {
+          "vaddr": "0x0011c520",
+          "word": "0xc4605458",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f0, 21592($v1)"
+        },
+        {
+          "vaddr": "0x0011c550",
+          "word": "0xc4405460",
+          "func": "__kernel_cosf",
+          "disasm": "lwc1 $f0, 21600($v0)"
+        },
+        {
+          "vaddr": "0x0011c594",
+          "word": "0xc4415480",
+          "func": "__kernel_sinf",
+          "disasm": "lwc1 $f1, 21632($v0)"
+        },
+        {
+          "vaddr": "0x0011c5a8",
+          "word": "0xc4405484",
+          "func": "__kernel_sinf",
+          "disasm": "lwc1 $f0, 21636($v0)"
+        },
+        {
+          "vaddr": "0x0011c5b4",
+          "word": "0xc4405488",
+          "func": "__kernel_sinf",
+          "disasm": "lwc1 $f0, 21640($v0)"
+        },
+        {
+          "vaddr": "0x0011c5c4",
+          "word": "0xc440548c",
+          "func": "__kernel_sinf",
+          "disasm": "lwc1 $f0, 21644($v0)"
+        },
+        {
+          "vaddr": "0x0011c5d4",
+          "word": "0xc4405490",
+          "func": "__kernel_sinf",
+          "disasm": "lwc1 $f0, 21648($v0)"
+        },
+        {
+          "vaddr": "0x0011c5f0",
+          "word": "0xc4405494",
+          "func": "__kernel_sinf",
+          "disasm": "lwc1 $f0, 21652($v0)"
+        },
+        {
+          "vaddr": "0x0011c610",
+          "word": "0xc440547c",
+          "func": "__kernel_sinf",
+          "disasm": "lwc1 $f0, 21628($v0)"
+        },
+        {
+          "vaddr": "0x0011c618",
+          "word": "0xc4445494",
+          "func": "__kernel_sinf",
+          "disasm": "lwc1 $f4, 21652($v0)"
+        },
+        {
+          "vaddr": "0x0011c694",
+          "word": "0xc4c05498",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f0, 21656($a2)"
+        },
+        {
+          "vaddr": "0x0011c6b0",
+          "word": "0xc442549c",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f2, 21660($v0)"
+        },
+        {
+          "vaddr": "0x0011c708",
+          "word": "0xc44254b4",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f2, 21684($v0)"
+        },
+        {
+          "vaddr": "0x0011c7cc",
+          "word": "0xc44254a4",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f2, 21668($v0)"
+        },
+        {
+          "vaddr": "0x0011c7d4",
+          "word": "0xc44154a0",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f1, 21664($v0)"
+        },
+        {
+          "vaddr": "0x0011c810",
+          "word": "0xc44154a8",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f1, 21672($v0)"
+        },
+        {
+          "vaddr": "0x0011c818",
+          "word": "0xc442547c",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f2, 21628($v0)"
+        },
+        {
+          "vaddr": "0x0011c828",
+          "word": "0xc4835498",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f3, 21656($a0)"
+        },
+        {
+          "vaddr": "0x0011c844",
+          "word": "0xc481549c",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f1, 21660($a0)"
+        },
+        {
+          "vaddr": "0x0011c8e8",
+          "word": "0xc46454a0",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f4, 21664($v1)"
+        },
+        {
+          "vaddr": "0x0011c8f0",
+          "word": "0xc46154a4",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f1, 21668($v1)"
+        },
+        {
+          "vaddr": "0x0011c950",
+          "word": "0xc4a10000",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f1, 0($a1)"
+        },
+        {
+          "vaddr": "0x0011c958",
+          "word": "0xc4a00004",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f0, 4($a1)"
+        },
+        {
+          "vaddr": "0x0011c984",
+          "word": "0xc46154ac",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f1, 21676($v1)"
+        },
+        {
+          "vaddr": "0x0011c98c",
+          "word": "0xc46054b0",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f0, 21680($v1)"
+        },
+        {
+          "vaddr": "0x0011c9c8",
+          "word": "0xc442549c",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f2, 21660($v0)"
+        },
+        {
+          "vaddr": "0x0011c9ec",
+          "word": "0xc44254a4",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f2, 21668($v0)"
+        },
+        {
+          "vaddr": "0x0011c9f4",
+          "word": "0xc44154a0",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "lwc1 $f1, 21664($v0)"
+        },
+        {
+          "vaddr": "0x0011cae4",
+          "word": "0xc5400000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f0, 0($t2)"
+        },
+        {
+          "vaddr": "0x0011cb40",
+          "word": "0xc4400000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f0, 0($v0)"
+        },
+        {
+          "vaddr": "0x0011cb48",
+          "word": "0xc4620000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f2, 0($v1)"
+        },
+        {
+          "vaddr": "0x0011cb84",
+          "word": "0xc47854b8",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f24, 21688($v1)"
+        },
+        {
+          "vaddr": "0x0011cb8c",
+          "word": "0xc47654b4",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f22, 21684($v1)"
+        },
+        {
+          "vaddr": "0x0011cc08",
+          "word": "0xc44c0000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f12, 0($v0)"
+        },
+        {
+          "vaddr": "0x0011cc28",
+          "word": "0xc4420004",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f2, 4($v0)"
+        },
+        {
+          "vaddr": "0x0011cc60",
+          "word": "0xc44c54bc",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f12, 21692($v0)"
+        },
+        {
+          "vaddr": "0x0011cc74",
+          "word": "0xc44154c0",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f1, 21696($v0)"
+        },
+        {
+          "vaddr": "0x0011cd90",
+          "word": "0xc4e00000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f0, 0($a3)"
+        },
+        {
+          "vaddr": "0x0011cdb0",
+          "word": "0xc4400000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f0, 0($v0)"
+        },
+        {
+          "vaddr": "0x0011cdb8",
+          "word": "0xc4620000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f2, 0($v1)"
+        },
+        {
+          "vaddr": "0x0011ce3c",
+          "word": "0xc440547c",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f0, 21628($v0)"
+        },
+        {
+          "vaddr": "0x0011cea0",
+          "word": "0xc46254b4",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f2, 21684($v1)"
+        },
+        {
+          "vaddr": "0x0011cec4",
+          "word": "0xc46154b8",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f1, 21688($v1)"
+        },
+        {
+          "vaddr": "0x0011cf04",
+          "word": "0xc44c5460",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f12, 21600($v0)"
+        },
+        {
+          "vaddr": "0x0011cf40",
+          "word": "0xc46254b8",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f2, 21688($v1)"
+        },
+        {
+          "vaddr": "0x0011cfa8",
+          "word": "0xc4800000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f0, 0($a0)"
+        },
+        {
+          "vaddr": "0x0011cfb0",
+          "word": "0xc462fffc",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f2, -4($v1)"
+        },
+        {
+          "vaddr": "0x0011d0b4",
+          "word": "0xc44c5460",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f12, 21600($v0)"
+        },
+        {
+          "vaddr": "0x0011d118",
+          "word": "0xc4405460",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f0, 21600($v0)"
+        },
+        {
+          "vaddr": "0x0011d17c",
+          "word": "0xc44c5460",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f12, 21600($v0)"
+        },
+        {
+          "vaddr": "0x0011d1d8",
+          "word": "0xc7b801dc",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f24, 476($sp)"
+        },
+        {
+          "vaddr": "0x0011d1dc",
+          "word": "0xc7b601d8",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f22, 472($sp)"
+        },
+        {
+          "vaddr": "0x0011d1e4",
+          "word": "0xc7b401d4",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f20, 468($sp)"
+        },
+        {
+          "vaddr": "0x0011d23c",
+          "word": "0xc4a10000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f1, 0($a1)"
+        },
+        {
+          "vaddr": "0x0011d29c",
+          "word": "0xc7a00050",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f0, 80($sp)"
+        },
+        {
+          "vaddr": "0x0011d2ac",
+          "word": "0xc4a20000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f2, 0($a1)"
+        },
+        {
+          "vaddr": "0x0011d2e0",
+          "word": "0xc5c10000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f1, 0($t6)"
+        },
+        {
+          "vaddr": "0x0011d33c",
+          "word": "0xc4c10000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f1, 0($a2)"
+        },
+        {
+          "vaddr": "0x0011d344",
+          "word": "0xc4600000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f0, 0($v1)"
+        },
+        {
+          "vaddr": "0x0011d374",
+          "word": "0xc4c10000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f1, 0($a2)"
+        },
+        {
+          "vaddr": "0x0011d378",
+          "word": "0xc4400000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f0, 0($v0)"
+        },
+        {
+          "vaddr": "0x0011d3a4",
+          "word": "0xc4a10000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f1, 0($a1)"
+        },
+        {
+          "vaddr": "0x0011d3bc",
+          "word": "0xc7a20050",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f2, 80($sp)"
+        },
+        {
+          "vaddr": "0x0011d3c4",
+          "word": "0xc7a10054",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f1, 84($sp)"
+        },
+        {
+          "vaddr": "0x0011d48c",
+          "word": "0xc7a00050",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f0, 80($sp)"
+        },
+        {
+          "vaddr": "0x0011d498",
+          "word": "0xc44154c4",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "lwc1 $f1, 21700($v0)"
+        },
+        {
+          "vaddr": "0x0011d50c",
+          "word": "0xc7a10000",
+          "func": "floorf",
+          "disasm": "lwc1 $f1, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d510",
+          "word": "0xc48054cc",
+          "func": "floorf",
+          "disasm": "lwc1 $f0, 21708($a0)"
+        },
+        {
+          "vaddr": "0x0011d550",
+          "word": "0xc7a00000",
+          "func": "floorf",
+          "disasm": "lwc1 $f0, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d570",
+          "word": "0xc7a00000",
+          "func": "floorf",
+          "disasm": "lwc1 $f0, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d57c",
+          "word": "0xc7a00000",
+          "func": "floorf",
+          "disasm": "lwc1 $f0, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d590",
+          "word": "0xc46054cc",
+          "func": "floorf",
+          "disasm": "lwc1 $f0, 21708($v1)"
+        },
+        {
+          "vaddr": "0x0011d5cc",
+          "word": "0xc44054c4",
+          "func": "floorf",
+          "disasm": "lwc1 $f0, 21700($v0)"
+        },
+        {
+          "vaddr": "0x0011d5e4",
+          "word": "0xc44054c8",
+          "func": "floorf",
+          "disasm": "lwc1 $f0, 21704($v0)"
+        },
+        {
+          "vaddr": "0x0011d638",
+          "word": "0xc7a10000",
+          "func": "scalbnf",
+          "disasm": "lwc1 $f1, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d63c",
+          "word": "0xc46054d0",
+          "func": "scalbnf",
+          "disasm": "lwc1 $f0, 21712($v1)"
+        },
+        {
+          "vaddr": "0x0011d688",
+          "word": "0xc44054cc",
+          "func": "scalbnf",
+          "disasm": "lwc1 $f0, 21708($v0)"
+        },
+        {
+          "vaddr": "0x0011d68c",
+          "word": "0xc44154cc",
+          "func": "scalbnf",
+          "disasm": "lwc1 $f1, 21708($v0)"
+        },
+        {
+          "vaddr": "0x0011d698",
+          "word": "0xc7a00000",
+          "func": "scalbnf",
+          "disasm": "lwc1 $f0, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d6b0",
+          "word": "0xc7a00000",
+          "func": "scalbnf",
+          "disasm": "lwc1 $f0, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d714",
+          "word": "0xc46054e0",
+          "func": "scalbnf",
+          "disasm": "lwc1 $f0, 21728($v1)"
+        },
+        {
+          "vaddr": "0x0011d734",
+          "word": "0xc44154cc",
+          "func": "scalbnf",
+          "disasm": "lwc1 $f1, 21708($v0)"
+        },
+        {
+          "vaddr": "0x0011d738",
+          "word": "0xc46054d8",
+          "func": "scalbnf",
+          "disasm": "lwc1 $f0, 21720($v1)"
+        },
+        {
+          "vaddr": "0x0011d754",
+          "word": "0xc7a10000",
+          "func": "scalbnf",
+          "disasm": "lwc1 $f1, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d758",
+          "word": "0xc44054d4",
+          "func": "scalbnf",
+          "disasm": "lwc1 $f0, 21716($v0)"
+        },
+        {
+          "vaddr": "0x0011d79c",
+          "word": "0xc44054d4",
+          "func": "scalbnf",
+          "disasm": "lwc1 $f0, 21716($v0)"
+        },
+        {
+          "vaddr": "0x0011d7a4",
+          "word": "0xc46054dc",
+          "func": "scalbnf",
+          "disasm": "lwc1 $f0, 21724($v1)"
+        },
+        {
+          "vaddr": "0x0011d7a8",
+          "word": "0xc44154d4",
+          "func": "scalbnf",
+          "disasm": "lwc1 $f1, 21716($v0)"
+        }
+      ]
+    },
+    "op=0x39 (swc1)": {
+      "count": 57,
+      "functions_affected": [
+        "__ieee754_rem_pio2f",
+        "__kernel_rem_pio2f",
+        "floorf",
+        "scalbnf"
+      ],
+      "example_sites": [
+        {
+          "vaddr": "0x0011c6c0",
+          "word": "0xe4a10000",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f1, 0($a1)"
+        },
+        {
+          "vaddr": "0x0011c6cc",
+          "word": "0xe4a00004",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f0, 4($a1)"
+        },
+        {
+          "vaddr": "0x0011c734",
+          "word": "0xe7a10000",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f1, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011c748",
+          "word": "0xe7a10004",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f1, 4($sp)"
+        },
+        {
+          "vaddr": "0x0011c754",
+          "word": "0xe7a00008",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f0, 8($sp)"
+        },
+        {
+          "vaddr": "0x0011c7a8",
+          "word": "0xe4ac0000",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f12, 0($a1)"
+        },
+        {
+          "vaddr": "0x0011c7e8",
+          "word": "0xe4a10000",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f1, 0($a1)"
+        },
+        {
+          "vaddr": "0x0011c7f4",
+          "word": "0xe4a00004",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f0, 4($a1)"
+        },
+        {
+          "vaddr": "0x0011c8ac",
+          "word": "0xe4a00004",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f0, 4($a1)"
+        },
+        {
+          "vaddr": "0x0011c8bc",
+          "word": "0xe4a10000",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f1, 0($a1)"
+        }
+      ],
+      "all_sites": [
+        {
+          "vaddr": "0x0011c6c0",
+          "word": "0xe4a10000",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f1, 0($a1)"
+        },
+        {
+          "vaddr": "0x0011c6cc",
+          "word": "0xe4a00004",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f0, 4($a1)"
+        },
+        {
+          "vaddr": "0x0011c734",
+          "word": "0xe7a10000",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f1, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011c748",
+          "word": "0xe7a10004",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f1, 4($sp)"
+        },
+        {
+          "vaddr": "0x0011c754",
+          "word": "0xe7a00008",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f0, 8($sp)"
+        },
+        {
+          "vaddr": "0x0011c7a8",
+          "word": "0xe4ac0000",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f12, 0($a1)"
+        },
+        {
+          "vaddr": "0x0011c7e8",
+          "word": "0xe4a10000",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f1, 0($a1)"
+        },
+        {
+          "vaddr": "0x0011c7f4",
+          "word": "0xe4a00004",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f0, 4($a1)"
+        },
+        {
+          "vaddr": "0x0011c8ac",
+          "word": "0xe4a00004",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f0, 4($a1)"
+        },
+        {
+          "vaddr": "0x0011c8bc",
+          "word": "0xe4a10000",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f1, 0($a1)"
+        },
+        {
+          "vaddr": "0x0011c8c4",
+          "word": "0xe4a00004",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f0, 4($a1)"
+        },
+        {
+          "vaddr": "0x0011c964",
+          "word": "0xe4a10000",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f1, 0($a1)"
+        },
+        {
+          "vaddr": "0x0011c96c",
+          "word": "0xe4a00004",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f0, 4($a1)"
+        },
+        {
+          "vaddr": "0x0011c9d8",
+          "word": "0xe4a10000",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f1, 0($a1)"
+        },
+        {
+          "vaddr": "0x0011c9e4",
+          "word": "0xe4a00004",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f0, 4($a1)"
+        },
+        {
+          "vaddr": "0x0011ca4c",
+          "word": "0xe7b801dc",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f24, 476($sp)"
+        },
+        {
+          "vaddr": "0x0011ca54",
+          "word": "0xe7b601d8",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f22, 472($sp)"
+        },
+        {
+          "vaddr": "0x0011ca58",
+          "word": "0xe7b401d4",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f20, 468($sp)"
+        },
+        {
+          "vaddr": "0x0011caf8",
+          "word": "0xe4a0fffc",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f0, -4($a1)"
+        },
+        {
+          "vaddr": "0x0011cb68",
+          "word": "0xe4410000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f1, 0($v0)"
+        },
+        {
+          "vaddr": "0x0011cc48",
+          "word": "0xe4e0fffc",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f0, -4($a3)"
+        },
+        {
+          "vaddr": "0x0011cd9c",
+          "word": "0xe4c00000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f0, 0($a2)"
+        },
+        {
+          "vaddr": "0x0011cdd4",
+          "word": "0xe5a10000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f1, 0($t5)"
+        },
+        {
+          "vaddr": "0x0011cef4",
+          "word": "0xe64000f0",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f0, 240($s2)"
+        },
+        {
+          "vaddr": "0x0011cef8",
+          "word": "0xe4a100f0",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f1, 240($a1)"
+        },
+        {
+          "vaddr": "0x0011cf6c",
+          "word": "0xe4c10004",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f1, 4($a2)"
+        },
+        {
+          "vaddr": "0x0011cfd8",
+          "word": "0xe5210000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f1, 0($t1)"
+        },
+        {
+          "vaddr": "0x0011d1d0",
+          "word": "0xe5600000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f0, 0($t3)"
+        },
+        {
+          "vaddr": "0x0011d2cc",
+          "word": "0xe5610000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f1, 0($t3)"
+        },
+        {
+          "vaddr": "0x0011d30c",
+          "word": "0xe5600004",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f0, 4($t3)"
+        },
+        {
+          "vaddr": "0x0011d358",
+          "word": "0xe4610004",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f1, 4($v1)"
+        },
+        {
+          "vaddr": "0x0011d364",
+          "word": "0xe4600008",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f0, 8($v1)"
+        },
+        {
+          "vaddr": "0x0011d38c",
+          "word": "0xe4410004",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f1, 4($v0)"
+        },
+        {
+          "vaddr": "0x0011d398",
+          "word": "0xe4400008",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f0, 8($v0)"
+        },
+        {
+          "vaddr": "0x0011d3c8",
+          "word": "0xe5620000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f2, 0($t3)"
+        },
+        {
+          "vaddr": "0x0011d3cc",
+          "word": "0xe5610004",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f1, 4($t3)"
+        },
+        {
+          "vaddr": "0x0011d3d4",
+          "word": "0xe5600008",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f0, 8($t3)"
+        },
+        {
+          "vaddr": "0x0011d3e4",
+          "word": "0xe64000f0",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f0, 240($s2)"
+        },
+        {
+          "vaddr": "0x0011d3f4",
+          "word": "0xe5620000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f2, 0($t3)"
+        },
+        {
+          "vaddr": "0x0011d3f8",
+          "word": "0xe5610004",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f1, 4($t3)"
+        },
+        {
+          "vaddr": "0x0011d400",
+          "word": "0xe5600008",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f0, 8($t3)"
+        },
+        {
+          "vaddr": "0x0011d40c",
+          "word": "0xe5620000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f2, 0($t3)"
+        },
+        {
+          "vaddr": "0x0011d49c",
+          "word": "0xe5610000",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f1, 0($t3)"
+        },
+        {
+          "vaddr": "0x0011d4a8",
+          "word": "0xe5600004",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "swc1 $f0, 4($t3)"
+        },
+        {
+          "vaddr": "0x0011d4c0",
+          "word": "0xe7ac0000",
+          "func": "floorf",
+          "disasm": "swc1 $f12, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d578",
+          "word": "0xe7a00000",
+          "func": "floorf",
+          "disasm": "swc1 $f0, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d5b0",
+          "word": "0xe7a10000",
+          "func": "floorf",
+          "disasm": "swc1 $f1, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d5d0",
+          "word": "0xe7a00000",
+          "func": "floorf",
+          "disasm": "swc1 $f0, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d5e8",
+          "word": "0xe7a00000",
+          "func": "floorf",
+          "disasm": "swc1 $f0, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d600",
+          "word": "0xe7ac0000",
+          "func": "scalbnf",
+          "disasm": "swc1 $f12, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d650",
+          "word": "0xe7a00000",
+          "func": "scalbnf",
+          "disasm": "swc1 $f0, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d694",
+          "word": "0xe7a00000",
+          "func": "scalbnf",
+          "disasm": "swc1 $f0, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d6ac",
+          "word": "0xe7a00000",
+          "func": "scalbnf",
+          "disasm": "swc1 $f0, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d728",
+          "word": "0xe7a00000",
+          "func": "scalbnf",
+          "disasm": "swc1 $f0, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d740",
+          "word": "0xe7a00000",
+          "func": "scalbnf",
+          "disasm": "swc1 $f0, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d760",
+          "word": "0xe7a00000",
+          "func": "scalbnf",
+          "disasm": "swc1 $f0, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011d7b0",
+          "word": "0xe7a00000",
+          "func": "scalbnf",
+          "disasm": "swc1 $f0, 0($sp)"
+        }
+      ]
+    }
+  },
+  "cop1_fpu_288_census": {
+    "op=0x11, fmt=0x10, funct=0x02 (mul.s)": {
+      "mnemonic": "mul.s",
+      "count": 65,
+      "functions_affected": [
+        "__ieee754_rem_pio2f",
+        "__kernel_cosf",
+        "__kernel_rem_pio2f",
+        "__kernel_sinf",
+        "draw_clear",
+        "scalbnf"
+      ],
+      "example_sites": [
+        {
+          "vaddr": "0x00101880",
+          "word": "0x46007382",
+          "func": "draw_clear",
+          "mnemonic": "mul.s",
+          "disasm": "mul.s $f14, $f14, $f0"
+        },
+        {
+          "vaddr": "0x001018a8",
+          "word": "0x46008402",
+          "func": "draw_clear",
+          "mnemonic": "mul.s",
+          "disasm": "mul.s $f16, $f16, $f0"
+        },
+        {
+          "vaddr": "0x00101950",
+          "word": "0x46007bc2",
+          "func": "draw_clear",
+          "mnemonic": "mul.s",
+          "disasm": "mul.s $f15, $f15, $f0"
+        },
+        {
+          "vaddr": "0x0010195c",
+          "word": "0x46000802",
+          "func": "draw_clear",
+          "mnemonic": "mul.s",
+          "disasm": "mul.s $f0, $f1, $f0"
+        },
+        {
+          "vaddr": "0x0011c3a4",
+          "word": "0x460c6082",
+          "func": "__kernel_cosf",
+          "mnemonic": "mul.s",
+          "disasm": "mul.s $f2, $f12, $f12"
+        },
+        {
+          "vaddr": "0x0011c3bc",
+          "word": "0x46011042",
+          "func": "__kernel_cosf",
+          "mnemonic": "mul.s",
+          "disasm": "mul.s $f1, $f2, $f1"
+        },
+        {
+          "vaddr": "0x0011c3cc",
+          "word": "0x46020842",
+          "func": "__kernel_cosf",
+          "mnemonic": "mul.s",
+          "disasm": "mul.s $f1, $f1, $f2"
+        },
+        {
+          "vaddr": "0x0011c3dc",
+          "word": "0x46020842",
+          "func": "__kernel_cosf",
+          "mnemonic": "mul.s",
+          "disasm": "mul.s $f1, $f1, $f2"
+        }
+      ]
+    },
+    "op=0x11, fmt=0x10, funct=0x01 (sub.s)": {
+      "mnemonic": "sub.s",
+      "count": 61,
+      "functions_affected": [
+        "__ieee754_rem_pio2f",
+        "__kernel_cosf",
+        "__kernel_rem_pio2f",
+        "__kernel_sinf",
+        "draw_clear"
+      ],
+      "example_sites": [
+        {
+          "vaddr": "0x00101888",
+          "word": "0x46018401",
+          "func": "draw_clear",
+          "mnemonic": "sub.s",
+          "disasm": "sub.s $f16, $f16, $f1"
+        },
+        {
+          "vaddr": "0x00101948",
+          "word": "0x46018c41",
+          "func": "draw_clear",
+          "mnemonic": "sub.s",
+          "disasm": "sub.s $f17, $f17, $f1"
+        },
+        {
+          "vaddr": "0x0011c3d0",
+          "word": "0x46000841",
+          "func": "__kernel_cosf",
+          "mnemonic": "sub.s",
+          "disasm": "sub.s $f1, $f1, $f0"
+        },
+        {
+          "vaddr": "0x0011c3f0",
+          "word": "0x46000841",
+          "func": "__kernel_cosf",
+          "mnemonic": "sub.s",
+          "disasm": "sub.s $f1, $f1, $f0"
+        },
+        {
+          "vaddr": "0x0011c420",
+          "word": "0x460d0841",
+          "func": "__kernel_cosf",
+          "mnemonic": "sub.s",
+          "disasm": "sub.s $f1, $f1, $f13"
+        },
+        {
+          "vaddr": "0x0011c424",
+          "word": "0x46010041",
+          "func": "__kernel_cosf",
+          "mnemonic": "sub.s",
+          "disasm": "sub.s $f1, $f0, $f1"
+        },
+        {
+          "vaddr": "0x0011c430",
+          "word": "0x46010001",
+          "func": "__kernel_cosf",
+          "mnemonic": "sub.s",
+          "disasm": "sub.s $f0, $f0, $f1"
+        },
+        {
+          "vaddr": "0x0011c470",
+          "word": "0x46000841",
+          "func": "__kernel_cosf",
+          "mnemonic": "sub.s",
+          "disasm": "sub.s $f1, $f1, $f0"
+        }
+      ]
+    },
+    "op=0x11, fmt=0x10, funct=0x00 (add.s)": {
+      "mnemonic": "add.s",
+      "count": 39,
+      "functions_affected": [
+        "__ieee754_rem_pio2f",
+        "__kernel_cosf",
+        "__kernel_rem_pio2f",
+        "__kernel_sinf",
+        "draw_clear",
+        "floorf",
+        "render",
+        "scalbnf"
+      ],
+      "example_sites": [
+        {
+          "vaddr": "0x00101860",
+          "word": "0x46107400",
+          "func": "draw_clear",
+          "mnemonic": "add.s",
+          "disasm": "add.s $f16, $f14, $f16"
+        },
+        {
+          "vaddr": "0x0010192c",
+          "word": "0x46117c40",
+          "func": "draw_clear",
+          "mnemonic": "add.s",
+          "disasm": "add.s $f17, $f15, $f17"
+        },
+        {
+          "vaddr": "0x00101944",
+          "word": "0x46027bc0",
+          "func": "draw_clear",
+          "mnemonic": "add.s",
+          "disasm": "add.s $f15, $f15, $f2"
+        },
+        {
+          "vaddr": "0x00101954",
+          "word": "0x46018840",
+          "func": "draw_clear",
+          "mnemonic": "add.s",
+          "disasm": "add.s $f1, $f17, $f1"
+        },
+        {
+          "vaddr": "0x001022e0",
+          "word": "0x46118c40",
+          "func": "render",
+          "mnemonic": "add.s",
+          "disasm": "add.s $f17, $f17, $f17"
+        },
+        {
+          "vaddr": "0x00102300",
+          "word": "0x46108400",
+          "func": "render",
+          "mnemonic": "add.s",
+          "disasm": "add.s $f16, $f16, $f16"
+        },
+        {
+          "vaddr": "0x0011c3c0",
+          "word": "0x46000840",
+          "func": "__kernel_cosf",
+          "mnemonic": "add.s",
+          "disasm": "add.s $f1, $f1, $f0"
+        },
+        {
+          "vaddr": "0x0011c3e0",
+          "word": "0x46000840",
+          "func": "__kernel_cosf",
+          "mnemonic": "add.s",
+          "disasm": "add.s $f1, $f1, $f0"
+        }
+      ]
+    },
+    "op=0x11, fmt=0x04 (mtc1)": {
+      "mnemonic": "mtc1",
+      "count": 38,
+      "functions_affected": [
+        "__ieee754_rem_pio2f",
+        "__kernel_cosf",
+        "__kernel_rem_pio2f",
+        "__kernel_sinf",
+        "cosf",
+        "fabsf",
+        "floorf",
+        "render",
+        "scalbnf",
+        "sinf"
+      ],
+      "example_sites": [
+        {
+          "vaddr": "0x00102144",
+          "word": "0x44820000",
+          "func": "render",
+          "mnemonic": "mtc1",
+          "disasm": "mtc1 $v0, $f0"
+        },
+        {
+          "vaddr": "0x00102154",
+          "word": "0x44820000",
+          "func": "render",
+          "mnemonic": "mtc1",
+          "disasm": "mtc1 $v0, $f0"
+        },
+        {
+          "vaddr": "0x00102160",
+          "word": "0x44807800",
+          "func": "render",
+          "mnemonic": "mtc1",
+          "disasm": "mtc1 $zero, $f15"
+        },
+        {
+          "vaddr": "0x001022d0",
+          "word": "0x44830000",
+          "func": "render",
+          "mnemonic": "mtc1",
+          "disasm": "mtc1 $v1, $f0"
+        },
+        {
+          "vaddr": "0x001022f0",
+          "word": "0x44830000",
+          "func": "render",
+          "mnemonic": "mtc1",
+          "disasm": "mtc1 $v1, $f0"
+        },
+        {
+          "vaddr": "0x0011c210",
+          "word": "0x44800000",
+          "func": "cosf",
+          "mnemonic": "mtc1",
+          "disasm": "mtc1 $zero, $f0"
+        },
+        {
+          "vaddr": "0x0011c26c",
+          "word": "0x44806800",
+          "func": "cosf",
+          "mnemonic": "mtc1",
+          "disasm": "mtc1 $zero, $f13"
+        },
+        {
+          "vaddr": "0x0011c2d8",
+          "word": "0x44800000",
+          "func": "sinf",
+          "mnemonic": "mtc1",
+          "disasm": "mtc1 $zero, $f0"
+        }
+      ]
+    },
+    "op=0x11, fmt=0x00 (mfc1)": {
+      "mnemonic": "mfc1",
+      "count": 17,
+      "functions_affected": [
+        "__ieee754_rem_pio2f",
+        "__kernel_cosf",
+        "__kernel_rem_pio2f",
+        "__kernel_sinf",
+        "cosf",
+        "draw_clear",
+        "fabsf",
+        "sinf"
+      ],
+      "example_sites": [
+        {
+          "vaddr": "0x001018c0",
+          "word": "0x44061000",
+          "func": "draw_clear",
+          "mnemonic": "mfc1",
+          "disasm": "mfc1 $a2, $f2"
+        },
+        {
+          "vaddr": "0x001018e8",
+          "word": "0x44081000",
+          "func": "draw_clear",
+          "mnemonic": "mfc1",
+          "disasm": "mfc1 $t0, $f2"
+        },
+        {
+          "vaddr": "0x00101960",
+          "word": "0x440a1000",
+          "func": "draw_clear",
+          "mnemonic": "mfc1",
+          "disasm": "mfc1 $t2, $f2"
+        },
+        {
+          "vaddr": "0x00101974",
+          "word": "0x44090000",
+          "func": "draw_clear",
+          "mnemonic": "mfc1",
+          "disasm": "mfc1 $t1, $f0"
+        },
+        {
+          "vaddr": "0x0011c1d8",
+          "word": "0x44036000",
+          "func": "cosf",
+          "mnemonic": "mfc1",
+          "disasm": "mfc1 $v1, $f12"
+        },
+        {
+          "vaddr": "0x0011c2a0",
+          "word": "0x44036000",
+          "func": "sinf",
+          "mnemonic": "mfc1",
+          "disasm": "mfc1 $v1, $f12"
+        },
+        {
+          "vaddr": "0x0011c370",
+          "word": "0x44026000",
+          "func": "__kernel_cosf",
+          "mnemonic": "mfc1",
+          "disasm": "mfc1 $v0, $f12"
+        },
+        {
+          "vaddr": "0x0011c394",
+          "word": "0x44030000",
+          "func": "__kernel_cosf",
+          "mnemonic": "mfc1",
+          "disasm": "mfc1 $v1, $f0"
+        }
+      ]
+    },
+    "op=0x11, fmt=0x10, funct=0x07 (neg.s)": {
+      "mnemonic": "neg.s",
+      "count": 16,
+      "functions_affected": [
+        "__ieee754_rem_pio2f",
+        "__kernel_rem_pio2f",
+        "cosf",
+        "sinf"
+      ],
+      "example_sites": [
+        {
+          "vaddr": "0x0011c27c",
+          "word": "0x46000007",
+          "func": "cosf",
+          "mnemonic": "neg.s",
+          "disasm": "neg.s $f0, $f0"
+        },
+        {
+          "vaddr": "0x0011c28c",
+          "word": "0x46000007",
+          "func": "cosf",
+          "mnemonic": "neg.s",
+          "disasm": "neg.s $f0, $f0"
+        },
+        {
+          "vaddr": "0x0011c34c",
+          "word": "0x46000007",
+          "func": "sinf",
+          "mnemonic": "neg.s",
+          "disasm": "neg.s $f0, $f0"
+        },
+        {
+          "vaddr": "0x0011c36c",
+          "word": "0x46000007",
+          "func": "sinf",
+          "mnemonic": "neg.s",
+          "disasm": "neg.s $f0, $f0"
+        },
+        {
+          "vaddr": "0x0011c8b0",
+          "word": "0x46001047",
+          "func": "__ieee754_rem_pio2f",
+          "mnemonic": "neg.s",
+          "disasm": "neg.s $f1, $f2"
+        },
+        {
+          "vaddr": "0x0011c8b8",
+          "word": "0x46000007",
+          "func": "__ieee754_rem_pio2f",
+          "mnemonic": "neg.s",
+          "disasm": "neg.s $f0, $f0"
+        },
+        {
+          "vaddr": "0x0011c95c",
+          "word": "0x46000847",
+          "func": "__ieee754_rem_pio2f",
+          "mnemonic": "neg.s",
+          "disasm": "neg.s $f1, $f1"
+        },
+        {
+          "vaddr": "0x0011c960",
+          "word": "0x46000007",
+          "func": "__ieee754_rem_pio2f",
+          "mnemonic": "neg.s",
+          "disasm": "neg.s $f0, $f0"
+        }
+      ]
+    },
+    "op=0x11, fmt=0x10, funct=0x24 (cvt.w.s)": {
+      "mnemonic": "cvt.w.s",
+      "count": 16,
+      "functions_affected": [
+        "__ieee754_rem_pio2f",
+        "__kernel_cosf",
+        "__kernel_rem_pio2f",
+        "__kernel_sinf",
+        "draw_clear"
+      ],
+      "example_sites": [
+        {
+          "vaddr": "0x001018a0",
+          "word": "0x460070a4",
+          "func": "draw_clear",
+          "mnemonic": "cvt.w.s",
+          "disasm": "cvt.w.s $f2, $f14"
+        },
+        {
+          "vaddr": "0x001018c8",
+          "word": "0x460080a4",
+          "func": "draw_clear",
+          "mnemonic": "cvt.w.s",
+          "disasm": "cvt.w.s $f2, $f16"
+        },
+        {
+          "vaddr": "0x00101958",
+          "word": "0x460078a4",
+          "func": "draw_clear",
+          "mnemonic": "cvt.w.s",
+          "disasm": "cvt.w.s $f2, $f15"
+        },
+        {
+          "vaddr": "0x00101964",
+          "word": "0x46000024",
+          "func": "draw_clear",
+          "mnemonic": "cvt.w.s",
+          "disasm": "cvt.w.s $f0, $f0"
+        },
+        {
+          "vaddr": "0x0011c390",
+          "word": "0x46006024",
+          "func": "__kernel_cosf",
+          "mnemonic": "cvt.w.s",
+          "disasm": "cvt.w.s $f0, $f12"
+        },
+        {
+          "vaddr": "0x0011c578",
+          "word": "0x46006024",
+          "func": "__kernel_sinf",
+          "mnemonic": "cvt.w.s",
+          "disasm": "cvt.w.s $f0, $f12"
+        },
+        {
+          "vaddr": "0x0011c720",
+          "word": "0x46000024",
+          "func": "__ieee754_rem_pio2f",
+          "mnemonic": "cvt.w.s",
+          "disasm": "cvt.w.s $f0, $f0"
+        },
+        {
+          "vaddr": "0x0011c73c",
+          "word": "0x46000064",
+          "func": "__ieee754_rem_pio2f",
+          "mnemonic": "cvt.w.s",
+          "disasm": "cvt.w.s $f1, $f0"
+        }
+      ]
+    },
+    "op=0x11, fmt=0x14, funct=0x20 (cvt.s.w)": {
+      "mnemonic": "cvt.s.w",
+      "count": 13,
+      "functions_affected": [
+        "__ieee754_rem_pio2f",
+        "__kernel_rem_pio2f",
+        "render"
+      ],
+      "example_sites": [
+        {
+          "vaddr": "0x00102150",
+          "word": "0x46800460",
+          "func": "render",
+          "mnemonic": "cvt.s.w",
+          "disasm": "cvt.s.w $f17, $f0"
+        },
+        {
+          "vaddr": "0x0010215c",
+          "word": "0x46800420",
+          "func": "render",
+          "mnemonic": "cvt.s.w",
+          "disasm": "cvt.s.w $f16, $f0"
+        },
+        {
+          "vaddr": "0x001022d8",
+          "word": "0x46800460",
+          "func": "render",
+          "mnemonic": "cvt.s.w",
+          "disasm": "cvt.s.w $f17, $f0"
+        },
+        {
+          "vaddr": "0x001022f8",
+          "word": "0x46800420",
+          "func": "render",
+          "mnemonic": "cvt.s.w",
+          "disasm": "cvt.s.w $f16, $f0"
+        },
+        {
+          "vaddr": "0x0011c724",
+          "word": "0x46800060",
+          "func": "__ieee754_rem_pio2f",
+          "mnemonic": "cvt.s.w",
+          "disasm": "cvt.s.w $f1, $f0"
+        },
+        {
+          "vaddr": "0x0011c740",
+          "word": "0x46800860",
+          "func": "__ieee754_rem_pio2f",
+          "mnemonic": "cvt.s.w",
+          "disasm": "cvt.s.w $f1, $f1"
+        },
+        {
+          "vaddr": "0x0011c83c",
+          "word": "0x468008a0",
+          "func": "__ieee754_rem_pio2f",
+          "mnemonic": "cvt.s.w",
+          "disasm": "cvt.s.w $f2, $f1"
+        },
+        {
+          "vaddr": "0x0011cae8",
+          "word": "0x46800020",
+          "func": "__kernel_rem_pio2f",
+          "mnemonic": "cvt.s.w",
+          "disasm": "cvt.s.w $f0, $f0"
+        }
+      ]
+    },
+    "op=0x11, fmt=0x10, funct=0x06 (mov.s)": {
+      "mnemonic": "mov.s",
+      "count": 7,
+      "functions_affected": [
+        "__ieee754_rem_pio2f",
+        "__kernel_rem_pio2f",
+        "__kernel_sinf",
+        "render"
+      ],
+      "example_sites": [
+        {
+          "vaddr": "0x00102170",
+          "word": "0x46007b86",
+          "func": "render",
+          "mnemonic": "mov.s",
+          "disasm": "mov.s $f14, $f15"
+        },
+        {
+          "vaddr": "0x0011c644",
+          "word": "0x46006006",
+          "func": "__kernel_sinf",
+          "mnemonic": "mov.s",
+          "disasm": "mov.s $f0, $f12"
+        },
+        {
+          "vaddr": "0x0011c930",
+          "word": "0x46001806",
+          "func": "__ieee754_rem_pio2f",
+          "mnemonic": "mov.s",
+          "disasm": "mov.s $f0, $f3"
+        },
+        {
+          "vaddr": "0x0011cc64",
+          "word": "0x46000506",
+          "func": "__kernel_rem_pio2f",
+          "mnemonic": "mov.s",
+          "disasm": "mov.s $f20, $f0"
+        },
+        {
+          "vaddr": "0x0011ce68",
+          "word": "0x4600a306",
+          "func": "__kernel_rem_pio2f",
+          "mnemonic": "mov.s",
+          "disasm": "mov.s $f12, $f20"
+        },
+        {
+          "vaddr": "0x0011d34c",
+          "word": "0x46000886",
+          "func": "__kernel_rem_pio2f",
+          "mnemonic": "mov.s",
+          "disasm": "mov.s $f2, $f1"
+        },
+        {
+          "vaddr": "0x0011d380",
+          "word": "0x46000886",
+          "func": "__kernel_rem_pio2f",
+          "mnemonic": "mov.s",
+          "disasm": "mov.s $f2, $f1"
+        }
+      ]
+    },
+    "op=0x11, fmt=0x08, nd_tf=0x00 (bc1f)": {
+      "mnemonic": "bc1f",
+      "count": 6,
+      "functions_affected": [
+        "__ieee754_rem_pio2f",
+        "__kernel_rem_pio2f",
+        "floorf"
+      ],
+      "example_sites": [
+        {
+          "vaddr": "0x0011c758",
+          "word": "0x45000079",
+          "func": "__ieee754_rem_pio2f",
+          "mnemonic": "bc1f",
+          "disasm": "bc1f 0x0011c940"
+        },
+        {
+          "vaddr": "0x0011c768",
+          "word": "0x45000081",
+          "func": "__ieee754_rem_pio2f",
+          "mnemonic": "bc1f",
+          "disasm": "bc1f 0x0011c970"
+        },
+        {
+          "vaddr": "0x0011cce8",
+          "word": "0x4500005f",
+          "func": "__kernel_rem_pio2f",
+          "mnemonic": "bc1f",
+          "disasm": "bc1f 0x0011ce68"
+        },
+        {
+          "vaddr": "0x0011ceb4",
+          "word": "0x45000148",
+          "func": "__kernel_rem_pio2f",
+          "mnemonic": "bc1f",
+          "disasm": "bc1f 0x0011d3d8"
+        },
+        {
+          "vaddr": "0x0011d528",
+          "word": "0x45000009",
+          "func": "floorf",
+          "mnemonic": "bc1f",
+          "disasm": "bc1f 0x0011d550"
+        },
+        {
+          "vaddr": "0x0011d5a0",
+          "word": "0x4500ffeb",
+          "func": "floorf",
+          "mnemonic": "bc1f",
+          "disasm": "bc1f 0x0011d550"
+        }
+      ]
+    },
+    "op=0x11, fmt=0x10, funct=0x32 (c.eq.s)": {
+      "mnemonic": "c.eq.s",
+      "count": 4,
+      "functions_affected": [
+        "__ieee754_rem_pio2f",
+        "__kernel_rem_pio2f"
+      ],
+      "example_sites": [
+        {
+          "vaddr": "0x0011c750",
+          "word": "0x46030032",
+          "func": "__ieee754_rem_pio2f",
+          "mnemonic": "c.eq.s",
+          "disasm": "c.eq.s $f0, $f3"
+        },
+        {
+          "vaddr": "0x0011c760",
+          "word": "0x46030832",
+          "func": "__ieee754_rem_pio2f",
+          "mnemonic": "c.eq.s",
+          "disasm": "c.eq.s $f1, $f3"
+        },
+        {
+          "vaddr": "0x0011cce0",
+          "word": "0x4600a032",
+          "func": "__kernel_rem_pio2f",
+          "mnemonic": "c.eq.s",
+          "disasm": "c.eq.s $f20, $f0"
+        },
+        {
+          "vaddr": "0x0011ce58",
+          "word": "0x4600a032",
+          "func": "__kernel_rem_pio2f",
+          "mnemonic": "c.eq.s",
+          "disasm": "c.eq.s $f20, $f0"
+        }
+      ]
+    },
+    "op=0x11, fmt=0x08, nd_tf=0x01 (bc1t)": {
+      "mnemonic": "bc1t",
+      "count": 2,
+      "functions_affected": [
+        "__kernel_rem_pio2f"
+      ],
+      "example_sites": [
+        {
+          "vaddr": "0x0011ce48",
+          "word": "0x4501010c",
+          "func": "__kernel_rem_pio2f",
+          "mnemonic": "bc1t",
+          "disasm": "bc1t 0x0011d27c"
+        },
+        {
+          "vaddr": "0x0011ce60",
+          "word": "0x4501ffa3",
+          "func": "__kernel_rem_pio2f",
+          "mnemonic": "bc1t",
+          "disasm": "bc1t 0x0011ccf0"
+        }
+      ]
+    },
+    "op=0x11, fmt=0x10, funct=0x34 (c.lt.s)": {
+      "mnemonic": "c.lt.s",
+      "count": 2,
+      "functions_affected": [
+        "floorf"
+      ],
+      "example_sites": [
+        {
+          "vaddr": "0x0011d520",
+          "word": "0x46000834",
+          "func": "floorf",
+          "mnemonic": "c.lt.s",
+          "disasm": "c.lt.s $f1, $f0"
+        },
+        {
+          "vaddr": "0x0011d598",
+          "word": "0x46000834",
+          "func": "floorf",
+          "mnemonic": "c.lt.s",
+          "disasm": "c.lt.s $f1, $f0"
+        }
+      ]
+    },
+    "op=0x11, fmt=0x10, funct=0x36 (c.le.s)": {
+      "mnemonic": "c.le.s",
+      "count": 2,
+      "functions_affected": [
+        "__kernel_rem_pio2f"
+      ],
+      "example_sites": [
+        {
+          "vaddr": "0x0011ce40",
+          "word": "0x46140036",
+          "func": "__kernel_rem_pio2f",
+          "mnemonic": "c.le.s",
+          "disasm": "c.le.s $f0, $f20"
+        },
+        {
+          "vaddr": "0x0011ceac",
+          "word": "0x46001036",
+          "func": "__kernel_rem_pio2f",
+          "mnemonic": "c.le.s",
+          "disasm": "c.le.s $f2, $f0"
+        }
+      ]
+    }
+  },
+  "book_reconciliation_m1_vs_v22_vs_v23": {
+    "CACHE_OP -> cache": {
+      "m1_undecoded": 13,
+      "v22_unlifted": 0,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x00102e54",
+          "word": "0xbcd00000",
+          "func": "_SyncDCache",
+          "disasm": "cache 0x10, 0($a2)"
+        },
+        {
+          "vaddr": "0x00102e84",
+          "word": "0xbcd40000",
+          "func": "_SyncDCache",
+          "disasm": "cache 0x14, 0($a2)"
+        },
+        {
+          "vaddr": "0x00102e90",
+          "word": "0xbcd00001",
+          "func": "_SyncDCache",
+          "disasm": "cache 0x10, 1($a2)"
+        },
+        {
+          "vaddr": "0x00102ec0",
+          "word": "0xbcd40001",
+          "func": "_SyncDCache",
+          "disasm": "cache 0x14, 1($a2)"
+        },
+        {
+          "vaddr": "0x00104218",
+          "word": "0xbd180000",
+          "func": "sceSifWriteBackDCache",
+          "disasm": "cache 0x18, 0($t0)"
+        }
+      ]
+    },
+    "COP0_SYSTEM -> bc0f": {
+      "m1_undecoded": 1,
+      "v22_unlifted": 1,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x00100d68",
+          "word": "0x4100fff9",
+          "func": "dma_wait_fast",
+          "disasm": "bc0f 0x00100d50"
+        }
+      ]
+    },
+    "COP0_SYSTEM -> bc0t": {
+      "m1_undecoded": 3,
+      "v22_unlifted": 3,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x00100d50",
+          "word": "0x41010008",
+          "func": "dma_wait_fast",
+          "disasm": "bc0t 0x00100d74"
+        },
+        {
+          "vaddr": "0x00100d58",
+          "word": "0x41010006",
+          "func": "dma_wait_fast",
+          "disasm": "bc0t 0x00100d74"
+        },
+        {
+          "vaddr": "0x00100d60",
+          "word": "0x41010004",
+          "func": "dma_wait_fast",
+          "disasm": "bc0t 0x00100d74"
+        }
+      ]
+    },
+    "COP0_SYSTEM -> di": {
+      "m1_undecoded": 1,
+      "v22_unlifted": 0,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x00102488",
+          "word": "0x42000039",
+          "func": "DIntr",
+          "disasm": "di"
+        }
+      ]
+    },
+    "COP0_SYSTEM -> ei": {
+      "m1_undecoded": 4,
+      "v22_unlifted": 0,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x001024b4",
+          "word": "0x42000038",
+          "func": "EIntr",
+          "disasm": "ei"
+        },
+        {
+          "vaddr": "0x0010454c",
+          "word": "0x42000038",
+          "func": "_SifCmdIntHandler",
+          "disasm": "ei"
+        },
+        {
+          "vaddr": "0x0011f8fc",
+          "word": "0x42000038",
+          "func": "DelayThreadWakeup_callback",
+          "disasm": "ei"
+        },
+        {
+          "vaddr": "0x00120c84",
+          "word": "0x42000038",
+          "func": "TimerHandler_callback",
+          "disasm": "ei"
+        }
+      ]
+    },
+    "COP0_SYSTEM -> mfc0": {
+      "m1_undecoded": 13,
+      "v22_unlifted": 0,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x00102470",
+          "word": "0x40026000",
+          "func": "DIntr",
+          "disasm": "mfc0 $v0, Status"
+        },
+        {
+          "vaddr": "0x00102490",
+          "word": "0x40026000",
+          "func": "DIntr",
+          "disasm": "mfc0 $v0, Status"
+        },
+        {
+          "vaddr": "0x001024b0",
+          "word": "0x40026000",
+          "func": "EIntr",
+          "disasm": "mfc0 $v0, Status"
+        },
+        {
+          "vaddr": "0x001024d0",
+          "word": "0x40026000",
+          "func": "EnableIntc",
+          "disasm": "mfc0 $v0, Status"
+        },
+        {
+          "vaddr": "0x00102548",
+          "word": "0x40026000",
+          "func": "DisableIntc",
+          "disasm": "mfc0 $v0, Status"
+        }
+      ]
+    },
+    "COP0_SYSTEM -> mtc0": {
+      "m1_undecoded": 4,
+      "v22_unlifted": 0,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x00102b0c",
+          "word": "0x40823000",
+          "func": "InitTLB",
+          "disasm": "mtc0 $v0, Wired"
+        },
+        {
+          "vaddr": "0x00102b94",
+          "word": "0x40823000",
+          "func": "InitTLB",
+          "disasm": "mtc0 $v0, Wired"
+        },
+        {
+          "vaddr": "0x00120d8c",
+          "word": "0x40826000",
+          "func": "SetT2",
+          "disasm": "mtc0 $v0, Status"
+        },
+        {
+          "vaddr": "0x00120da4",
+          "word": "0x40826000",
+          "func": "SetT2",
+          "disasm": "mtc0 $v0, Status"
+        }
+      ]
+    },
+    "COP1_FPU -> add.s": {
+      "m1_undecoded": 39,
+      "v22_unlifted": 39,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x00101860",
+          "word": "0x46107400",
+          "func": "draw_clear",
+          "disasm": "add.s $f16, $f14, $f16"
+        },
+        {
+          "vaddr": "0x0010192c",
+          "word": "0x46117c40",
+          "func": "draw_clear",
+          "disasm": "add.s $f17, $f15, $f17"
+        },
+        {
+          "vaddr": "0x00101944",
+          "word": "0x46027bc0",
+          "func": "draw_clear",
+          "disasm": "add.s $f15, $f15, $f2"
+        },
+        {
+          "vaddr": "0x00101954",
+          "word": "0x46018840",
+          "func": "draw_clear",
+          "disasm": "add.s $f1, $f17, $f1"
+        },
+        {
+          "vaddr": "0x001022e0",
+          "word": "0x46118c40",
+          "func": "render",
+          "disasm": "add.s $f17, $f17, $f17"
+        }
+      ]
+    },
+    "COP1_FPU -> bc1f": {
+      "m1_undecoded": 6,
+      "v22_unlifted": 6,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x0011c758",
+          "word": "0x45000079",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "bc1f 0x0011c940"
+        },
+        {
+          "vaddr": "0x0011c768",
+          "word": "0x45000081",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "bc1f 0x0011c970"
+        },
+        {
+          "vaddr": "0x0011cce8",
+          "word": "0x4500005f",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "bc1f 0x0011ce68"
+        },
+        {
+          "vaddr": "0x0011ceb4",
+          "word": "0x45000148",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "bc1f 0x0011d3d8"
+        },
+        {
+          "vaddr": "0x0011d528",
+          "word": "0x45000009",
+          "func": "floorf",
+          "disasm": "bc1f 0x0011d550"
+        }
+      ]
+    },
+    "COP1_FPU -> bc1t": {
+      "m1_undecoded": 2,
+      "v22_unlifted": 2,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x0011ce48",
+          "word": "0x4501010c",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "bc1t 0x0011d27c"
+        },
+        {
+          "vaddr": "0x0011ce60",
+          "word": "0x4501ffa3",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "bc1t 0x0011ccf0"
+        }
+      ]
+    },
+    "COP1_FPU -> c.eq.s": {
+      "m1_undecoded": 4,
+      "v22_unlifted": 4,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x0011c750",
+          "word": "0x46030032",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "c.eq.s $f0, $f3"
+        },
+        {
+          "vaddr": "0x0011c760",
+          "word": "0x46030832",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "c.eq.s $f1, $f3"
+        },
+        {
+          "vaddr": "0x0011cce0",
+          "word": "0x4600a032",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "c.eq.s $f20, $f0"
+        },
+        {
+          "vaddr": "0x0011ce58",
+          "word": "0x4600a032",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "c.eq.s $f20, $f0"
+        }
+      ]
+    },
+    "COP1_FPU -> c.le.s": {
+      "m1_undecoded": 2,
+      "v22_unlifted": 2,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x0011ce40",
+          "word": "0x46140036",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "c.le.s $f0, $f20"
+        },
+        {
+          "vaddr": "0x0011ceac",
+          "word": "0x46001036",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "c.le.s $f2, $f0"
+        }
+      ]
+    },
+    "COP1_FPU -> c.lt.s": {
+      "m1_undecoded": 2,
+      "v22_unlifted": 2,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x0011d520",
+          "word": "0x46000834",
+          "func": "floorf",
+          "disasm": "c.lt.s $f1, $f0"
+        },
+        {
+          "vaddr": "0x0011d598",
+          "word": "0x46000834",
+          "func": "floorf",
+          "disasm": "c.lt.s $f1, $f0"
+        }
+      ]
+    },
+    "COP1_FPU -> cvt.s.w": {
+      "m1_undecoded": 13,
+      "v22_unlifted": 13,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x00102150",
+          "word": "0x46800460",
+          "func": "render",
+          "disasm": "cvt.s.w $f17, $f0"
+        },
+        {
+          "vaddr": "0x0010215c",
+          "word": "0x46800420",
+          "func": "render",
+          "disasm": "cvt.s.w $f16, $f0"
+        },
+        {
+          "vaddr": "0x001022d8",
+          "word": "0x46800460",
+          "func": "render",
+          "disasm": "cvt.s.w $f17, $f0"
+        },
+        {
+          "vaddr": "0x001022f8",
+          "word": "0x46800420",
+          "func": "render",
+          "disasm": "cvt.s.w $f16, $f0"
+        },
+        {
+          "vaddr": "0x0011c724",
+          "word": "0x46800060",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "cvt.s.w $f1, $f0"
+        }
+      ]
+    },
+    "COP1_FPU -> cvt.w.s": {
+      "m1_undecoded": 16,
+      "v22_unlifted": 16,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x001018a0",
+          "word": "0x460070a4",
+          "func": "draw_clear",
+          "disasm": "cvt.w.s $f2, $f14"
+        },
+        {
+          "vaddr": "0x001018c8",
+          "word": "0x460080a4",
+          "func": "draw_clear",
+          "disasm": "cvt.w.s $f2, $f16"
+        },
+        {
+          "vaddr": "0x00101958",
+          "word": "0x460078a4",
+          "func": "draw_clear",
+          "disasm": "cvt.w.s $f2, $f15"
+        },
+        {
+          "vaddr": "0x00101964",
+          "word": "0x46000024",
+          "func": "draw_clear",
+          "disasm": "cvt.w.s $f0, $f0"
+        },
+        {
+          "vaddr": "0x0011c390",
+          "word": "0x46006024",
+          "func": "__kernel_cosf",
+          "disasm": "cvt.w.s $f0, $f12"
+        }
+      ]
+    },
+    "COP1_FPU -> mfc1": {
+      "m1_undecoded": 17,
+      "v22_unlifted": 17,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x001018c0",
+          "word": "0x44061000",
+          "func": "draw_clear",
+          "disasm": "mfc1 $a2, $f2"
+        },
+        {
+          "vaddr": "0x001018e8",
+          "word": "0x44081000",
+          "func": "draw_clear",
+          "disasm": "mfc1 $t0, $f2"
+        },
+        {
+          "vaddr": "0x00101960",
+          "word": "0x440a1000",
+          "func": "draw_clear",
+          "disasm": "mfc1 $t2, $f2"
+        },
+        {
+          "vaddr": "0x00101974",
+          "word": "0x44090000",
+          "func": "draw_clear",
+          "disasm": "mfc1 $t1, $f0"
+        },
+        {
+          "vaddr": "0x0011c1d8",
+          "word": "0x44036000",
+          "func": "cosf",
+          "disasm": "mfc1 $v1, $f12"
+        }
+      ]
+    },
+    "COP1_FPU -> mov.s": {
+      "m1_undecoded": 7,
+      "v22_unlifted": 7,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x00102170",
+          "word": "0x46007b86",
+          "func": "render",
+          "disasm": "mov.s $f14, $f15"
+        },
+        {
+          "vaddr": "0x0011c644",
+          "word": "0x46006006",
+          "func": "__kernel_sinf",
+          "disasm": "mov.s $f0, $f12"
+        },
+        {
+          "vaddr": "0x0011c930",
+          "word": "0x46001806",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "mov.s $f0, $f3"
+        },
+        {
+          "vaddr": "0x0011cc64",
+          "word": "0x46000506",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "mov.s $f20, $f0"
+        },
+        {
+          "vaddr": "0x0011ce68",
+          "word": "0x4600a306",
+          "func": "__kernel_rem_pio2f",
+          "disasm": "mov.s $f12, $f20"
+        }
+      ]
+    },
+    "COP1_FPU -> mtc1": {
+      "m1_undecoded": 38,
+      "v22_unlifted": 38,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x00102144",
+          "word": "0x44820000",
+          "func": "render",
+          "disasm": "mtc1 $v0, $f0"
+        },
+        {
+          "vaddr": "0x00102154",
+          "word": "0x44820000",
+          "func": "render",
+          "disasm": "mtc1 $v0, $f0"
+        },
+        {
+          "vaddr": "0x00102160",
+          "word": "0x44807800",
+          "func": "render",
+          "disasm": "mtc1 $zero, $f15"
+        },
+        {
+          "vaddr": "0x001022d0",
+          "word": "0x44830000",
+          "func": "render",
+          "disasm": "mtc1 $v1, $f0"
+        },
+        {
+          "vaddr": "0x001022f0",
+          "word": "0x44830000",
+          "func": "render",
+          "disasm": "mtc1 $v1, $f0"
+        }
+      ]
+    },
+    "COP1_FPU -> mul.s": {
+      "m1_undecoded": 65,
+      "v22_unlifted": 65,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x00101880",
+          "word": "0x46007382",
+          "func": "draw_clear",
+          "disasm": "mul.s $f14, $f14, $f0"
+        },
+        {
+          "vaddr": "0x001018a8",
+          "word": "0x46008402",
+          "func": "draw_clear",
+          "disasm": "mul.s $f16, $f16, $f0"
+        },
+        {
+          "vaddr": "0x00101950",
+          "word": "0x46007bc2",
+          "func": "draw_clear",
+          "disasm": "mul.s $f15, $f15, $f0"
+        },
+        {
+          "vaddr": "0x0010195c",
+          "word": "0x46000802",
+          "func": "draw_clear",
+          "disasm": "mul.s $f0, $f1, $f0"
+        },
+        {
+          "vaddr": "0x0011c3a4",
+          "word": "0x460c6082",
+          "func": "__kernel_cosf",
+          "disasm": "mul.s $f2, $f12, $f12"
+        }
+      ]
+    },
+    "COP1_FPU -> neg.s": {
+      "m1_undecoded": 16,
+      "v22_unlifted": 16,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x0011c27c",
+          "word": "0x46000007",
+          "func": "cosf",
+          "disasm": "neg.s $f0, $f0"
+        },
+        {
+          "vaddr": "0x0011c28c",
+          "word": "0x46000007",
+          "func": "cosf",
+          "disasm": "neg.s $f0, $f0"
+        },
+        {
+          "vaddr": "0x0011c34c",
+          "word": "0x46000007",
+          "func": "sinf",
+          "disasm": "neg.s $f0, $f0"
+        },
+        {
+          "vaddr": "0x0011c36c",
+          "word": "0x46000007",
+          "func": "sinf",
+          "disasm": "neg.s $f0, $f0"
+        },
+        {
+          "vaddr": "0x0011c8b0",
+          "word": "0x46001047",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "neg.s $f1, $f2"
+        }
+      ]
+    },
+    "COP1_FPU -> sub.s": {
+      "m1_undecoded": 61,
+      "v22_unlifted": 61,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x00101888",
+          "word": "0x46018401",
+          "func": "draw_clear",
+          "disasm": "sub.s $f16, $f16, $f1"
+        },
+        {
+          "vaddr": "0x00101948",
+          "word": "0x46018c41",
+          "func": "draw_clear",
+          "disasm": "sub.s $f17, $f17, $f1"
+        },
+        {
+          "vaddr": "0x0011c3d0",
+          "word": "0x46000841",
+          "func": "__kernel_cosf",
+          "disasm": "sub.s $f1, $f1, $f0"
+        },
+        {
+          "vaddr": "0x0011c3f0",
+          "word": "0x46000841",
+          "func": "__kernel_cosf",
+          "disasm": "sub.s $f1, $f1, $f0"
+        },
+        {
+          "vaddr": "0x0011c420",
+          "word": "0x460d0841",
+          "func": "__kernel_cosf",
+          "disasm": "sub.s $f1, $f1, $f13"
+        }
+      ]
+    },
+    "MEMORY_BARRIER_SYNC -> sync.l": {
+      "m1_undecoded": 34,
+      "v22_unlifted": 0,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x00100d48",
+          "word": "0x0000000f",
+          "func": "dma_wait_fast",
+          "disasm": "sync.l stype=0x0"
+        },
+        {
+          "vaddr": "0x001024f0",
+          "word": "0x0000000f",
+          "func": "EnableIntc",
+          "disasm": "sync.l stype=0x0"
+        },
+        {
+          "vaddr": "0x0010251c",
+          "word": "0x0000000f",
+          "func": "EnableIntc",
+          "disasm": "sync.l stype=0x0"
+        },
+        {
+          "vaddr": "0x00102568",
+          "word": "0x0000000f",
+          "func": "DisableIntc",
+          "disasm": "sync.l stype=0x0"
+        },
+        {
+          "vaddr": "0x00102594",
+          "word": "0x0000000f",
+          "func": "DisableIntc",
+          "disasm": "sync.l stype=0x0"
+        }
+      ]
+    },
+    "MEMORY_BARRIER_SYNC -> sync.p": {
+      "m1_undecoded": 7,
+      "v22_unlifted": 0,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x00100d4c",
+          "word": "0x0000040f",
+          "func": "dma_wait_fast",
+          "disasm": "sync.p stype=0x10"
+        },
+        {
+          "vaddr": "0x00101108",
+          "word": "0x0000040f",
+          "func": "graph_initialize",
+          "disasm": "sync.p stype=0x10"
+        },
+        {
+          "vaddr": "0x0010248c",
+          "word": "0x0000040f",
+          "func": "DIntr",
+          "disasm": "sync.p stype=0x10"
+        },
+        {
+          "vaddr": "0x00102b10",
+          "word": "0x0000040f",
+          "func": "InitTLB",
+          "disasm": "sync.p stype=0x10"
+        },
+        {
+          "vaddr": "0x00102b98",
+          "word": "0x0000040f",
+          "func": "InitTLB",
+          "disasm": "sync.p stype=0x10"
+        }
+      ]
+    },
+    "R5900_MMI_SIMD -> madd": {
+      "m1_undecoded": 1,
+      "v22_unlifted": 0,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x0011a3c8",
+          "word": "0x70a40000",
+          "func": "__muldi3",
+          "disasm": "madd $zero, $a1, $a0"
+        }
+      ]
+    },
+    "R5900_MMI_SIMD -> pcpyh": {
+      "m1_undecoded": 1,
+      "v22_unlifted": 1,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x001042bc",
+          "word": "0x70081ee9",
+          "func": "memset",
+          "disasm": "pcpyh $v1, $t0"
+        }
+      ]
+    },
+    "R5900_MMI_SIMD -> pcpyld": {
+      "m1_undecoded": 1,
+      "v22_unlifted": 0,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x001042c8",
+          "word": "0x70634389",
+          "func": "memset",
+          "disasm": "pcpyld $t0, $v1, $v1"
+        }
+      ]
+    },
+    "R5900_MMI_SIMD -> pmfhl.lw": {
+      "m1_undecoded": 1,
+      "v22_unlifted": 0,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x0011a3b4",
+          "word": "0x70001030",
+          "func": "__muldi3",
+          "disasm": "pmfhl.lw $v0"
+        }
+      ]
+    },
+    "R5900_QUADWORD_MEM -> sq": {
+      "m1_undecoded": 3,
+      "v22_unlifted": 0,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x00100b48",
+          "word": "0x7c400000",
+          "func": "__start",
+          "disasm": "sq $zero, 0($v0)"
+        },
+        {
+          "vaddr": "0x001042cc",
+          "word": "0x7ce80000",
+          "func": "memset",
+          "disasm": "sq $t0, 0($a3)"
+        },
+        {
+          "vaddr": "0x001042dc",
+          "word": "0x7ce80000",
+          "func": "memset",
+          "disasm": "sq $t0, 0($a3)"
+        }
+      ]
+    },
+    "UNKNOWN_OPCODE -> lwc1": {
+      "m1_undecoded": 113,
+      "v22_unlifted": 113,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x00101868",
+          "word": "0xc44154e8",
+          "func": "draw_clear",
+          "disasm": "lwc1 $f1, 21736($v0)"
+        },
+        {
+          "vaddr": "0x00101870",
+          "word": "0xc44054e4",
+          "func": "draw_clear",
+          "disasm": "lwc1 $f0, 21732($v0)"
+        },
+        {
+          "vaddr": "0x00101934",
+          "word": "0xc44254ec",
+          "func": "draw_clear",
+          "disasm": "lwc1 $f2, 21740($v0)"
+        },
+        {
+          "vaddr": "0x0010194c",
+          "word": "0xc44154f0",
+          "func": "draw_clear",
+          "disasm": "lwc1 $f1, 21744($v0)"
+        },
+        {
+          "vaddr": "0x0011c230",
+          "word": "0xc7ac0000",
+          "func": "cosf",
+          "disasm": "lwc1 $f12, 0($sp)"
+        }
+      ]
+    },
+    "UNKNOWN_OPCODE -> swc1": {
+      "m1_undecoded": 57,
+      "v22_unlifted": 57,
+      "v23_unlifted": 0,
+      "examples": [
+        {
+          "vaddr": "0x0011c6c0",
+          "word": "0xe4a10000",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f1, 0($a1)"
+        },
+        {
+          "vaddr": "0x0011c6cc",
+          "word": "0xe4a00004",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f0, 4($a1)"
+        },
+        {
+          "vaddr": "0x0011c734",
+          "word": "0xe7a10000",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f1, 0($sp)"
+        },
+        {
+          "vaddr": "0x0011c748",
+          "word": "0xe7a10004",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f1, 4($sp)"
+        },
+        {
+          "vaddr": "0x0011c754",
+          "word": "0xe7a00008",
+          "func": "__ieee754_rem_pio2f",
+          "disasm": "swc1 $f0, 8($sp)"
+        }
+      ]
+    }
+  }
+}

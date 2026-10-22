@@ -1,0 +1,44 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'org.ps2lifter.graph'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "org.ps2lifter.graph"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "2.3.0"
+
+        ndk {
+            abiFilters 'arm64-v8a', 'x86_64'
+        }
+
+        externalNativeBuild {
+            cmake {
+                cFlags "-std=c11 -O1 -Wall -Wextra"
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+            version '3.22.1'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}

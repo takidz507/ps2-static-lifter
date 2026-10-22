@@ -1,0 +1,51 @@
+================================================================================
+PS2 Static Lifter M2.3 — Part 2 R5900 COP1 FPU Bit-Exact Numerical Proof Suite
+================================================================================
+[PASS] SUB.S: 2048.0f - 256.0f = 1792.0f                        : actual=0x44e00000 == expected=0x44e00000
+[PASS] ADD.S: 1792.0f + 512.0f = 2304.0f                        : actual=0x45100000 == expected=0x45100000
+[PASS] MUL.S: 1812.0f * 16.0f = 28992.0f                        : actual=0x46e28000 == expected=0x46e28000
+[PASS] NEG.S: -(1792.0f) = -1792.0f (0xC4E00000)                : actual=0xc4e00000 == expected=0xc4e00000
+[PASS] NEG.S: -(-0.0f) = +0.0f (0x00000000)                     : actual=0x00000000 == expected=0x00000000
+[PASS] MOV.S: raw bit copy of 0x7F801234 (exp=255)              : actual=0x7f801234 == expected=0x7f801234
+[PASS] DIV.S: 512.0f / 32.0f = 16.0f (0x41800000)               : actual=0x41800000 == expected=0x41800000
+[PASS] SQRT.S: sqrt(256.0f) = 16.0f (0x41800000)                : actual=0x41800000 == expected=0x41800000
+[PASS] ABS.S: abs(-512.0f) = +512.0f (0x44000000)               : actual=0x44000000 == expected=0x44000000
+[PASS] MAX.S: max(-10.0f, 20.0f) = 20.0f (0x41A00000)           : actual=0x41a00000 == expected=0x41a00000
+[PASS] MIN.S: min(-10.0f, 20.0f) = -10.0f (0xC1200000)          : actual=0xc1200000 == expected=0xc1200000
+[PASS] EE Denormal Flush: 0x00123456 + 1.0f = 1.0f (0x3F800000) : actual=0x3f800000 == expected=0x3f800000
+[PASS] EE Negative Denormal Mul: 0x807FFFFF * 2.0f = -0.0f      : actual=0x80000000 == expected=0x80000000
+[PASS] EE Round-to-Zero: 1.0f + 2^-24 = 1.0f (0x3F800000)       : actual=0x3f800000 == expected=0x3f800000
+[PASS] EE Round-to-Zero: 1.0f - 2^-25 = 0x3F7FFFFF              : actual=0x3f7fffff == expected=0x3f7fffff
+[PASS] EE Exp=255 Finite: 2^127 * 2.0f = 0x7F800000 (no overflow) : actual=0x7f800000 == expected=0x7f800000
+[PASS] EE Exp=255 FCSR Cause.O clear on exp=255 exact           : actual=0x00000000 == expected=0x00000000
+[PASS] EE Overflow Saturation: +MAX * 2.0f = +MAX (0x7FFFFFFF)  : actual=0x7fffffff == expected=0x7fffffff
+[PASS] EE Overflow FCSR Cause.O + Sticky.O set                  : actual=0x00010020 == expected=0x00010020
+[PASS] EE Div-by-Zero Saturation: -1.0f / +0.0f = -MAX (0xFFFFFFFF) : actual=0xffffffff == expected=0xffffffff
+[PASS] EE Div-by-Zero FCSR Cause.D + Sticky.D set               : actual=0x00004008 == expected=0x00004008
+[PASS] CVT.W.S: +28672.9f (0x46E001CC) -> 28672 (0x00007000)    : actual=0x00007000 == expected=0x00007000
+[PASS] CVT.W.S: -42.875f (0xC22B8000) -> -42 (0xFFFFFFD6)       : actual=0xffffffd6 == expected=0xffffffd6
+[PASS] CVT.W.S: +1e12f (0x5368D4A5) -> +INT32_MAX (0x7FFFFFFF)  : actual=0x7fffffff == expected=0x7fffffff
+[PASS] CVT.W.S: -1e12f (0xD368D4A5) -> INT32_MIN (0x80000000)   : actual=0x80000000 == expected=0x80000000
+[PASS] CVT.S.W: 512 (0x00000200) -> 512.0f (0x44000000)         : actual=0x44000000 == expected=0x44000000
+[PASS] CVT.S.W: -256 (0xFFFFFF00) -> -256.0f (0xC3800000)       : actual=0xc3800000 == expected=0xc3800000
+[PASS] CVT.S.W (EE RTZ vs IEEE RNE): 0x7FFFFFFF -> 0x4EFFFFFF   : actual=0x4effffff == expected=0x4effffff
+[PASS] C.EQ.S(+0.0f, -0.0f) sets FCSR.C = 1                     : actual=0x00000001 == expected=0x00000001
+[PASS] BC1T taken when C=1                                      : actual=0x00000001 == expected=0x00000001
+[PASS] BC1F not taken when C=1                                  : actual=0x00000000 == expected=0x00000000
+[PASS] C.LT.S(32.0f, 512.0f) sets FCSR.C = 1                    : actual=0x00000001 == expected=0x00000001
+[PASS] C.LT.S(512.0f, 512.0f) sets FCSR.C = 0                   : actual=0x00000000 == expected=0x00000000
+[PASS] BC1F taken when C=0                                      : actual=0x00000001 == expected=0x00000001
+[PASS] BC1T not taken when C=0                                  : actual=0x00000000 == expected=0x00000000
+[PASS] C.LE.S(512.0f, 512.0f) sets FCSR.C = 1                   : actual=0x00000001 == expected=0x00000001
+[PASS] C.LE.S(513.0f, 512.0f) sets FCSR.C = 0                   : actual=0x00000000 == expected=0x00000000
+[PASS] C.F.S always clears FCSR.C = 0                           : actual=0x00000000 == expected=0x00000000
+[PASS] Delay slots executed on all 4 BC1 tests                  : actual=0x00000004 == expected=0x00000004
+[PASS] draw_clear chain [0x001018f8]: y + h = 2304.0f           : actual=0x45100000 == expected=0x45100000
+[PASS] draw_clear chain [0x00101918]: Y0 fixed 12.4 = 0x7000    : actual=0x00007000 == expected=0x00007000
+[PASS] draw_clear chain [0x00101910]: Y1 fixed 12.4 = 0x9000    : actual=0x00009000 == expected=0x00009000
+[PASS] draw_clear chain [0x00101970]: 16 strips emitted         : actual=0x00000010 == expected=0x00000010
+[PASS] draw_clear chain: strip[0].X0 = 0x7000 (1792.0)          : actual=0x00007000 == expected=0x00007000
+[PASS] draw_clear chain: strip[15].X1 = 0x9000 (2304.0)         : actual=0x00009000 == expected=0x00009000
+================================================================================
+FPU Numerical Proof Summary: 45 / 45 passed (0 failed)
+================================================================================

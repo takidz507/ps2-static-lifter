@@ -1,0 +1,86 @@
+# PS2-LIFTER Milestone 2.3 — Complete GS Boundary & GIF Packet Event Trace
+# Frames Completed: 3 | GIF DMA Packets: 4 | GIF Tags: 11 | GS Reg Writes: 64 | Primitives Drawn: 18 | Pixels Filled: 282144
+# =========================================================================================================================
+# SEQ | FRAME | INSN_RETIRED | SITE_PC    | EVENT_TYPE       | REG/FLG | NAME               | DATA_LO            | DATA_HI            | DETAIL
+# =========================================================================================================================
+    1 |     1 |        38709 | 0x001010f8 | PRIV_REG_WRITE   |  0x1000 | GS_CSR             | 0x0000000000000200 | 0x000000000000000a | Written GS_CSR
+    2 |     1 |        38712 | 0x00101100 | PRIV_REG_WRITE   |  0x1000 | GS_CSR             | 0x0000000000000000 | 0x000000000000000a | Written GS_CSR
+    3 |     1 |        38714 | 0x001023a4 | PRIV_REG_WRITE   |  0x1010 | GS_IMR             | 0x0000000000007700 | 0x000000000000ff00 | GsPutIMR syscall
+    4 |     1 |        38739 | 0x00102324 | PRIV_REG_WRITE   |  0x0002 | SetGsCrt           | 0x0000000000000001 | 0x0000000000000003 | SetGsCrt(interlace=1, mode=0x3, ffmd=0)
+    5 |     1 |        38807 | 0x00101248 | PRIV_REG_WRITE   |  0x0080 | GS_DISPLAY1        | 0x001ff9ff020482a8 | 0x0000000000000000 | Configured GS_DISPLAY1
+    6 |     1 |        38808 | 0x0010124c | PRIV_REG_WRITE   |  0x00a0 | GS_DISPLAY2        | 0x001fe9ff020482a8 | 0x0000000000000000 | Configured GS_DISPLAY2
+    7 |     1 |        38836 | 0x001012bc | PRIV_REG_WRITE   |  0x00e0 | GS_BGCOLOR         | 0x0000000000000000 | 0x0000000000000000 | Configured GS_BGCOLOR
+    8 |     1 |        38837 | 0x001012c0 | PRIV_REG_WRITE   |  0x0070 | GS_DISPFB1         | 0x0000000000001000 | 0x0000000000000000 | Configured GS_DISPFB1
+    9 |     1 |        38838 | 0x001012c4 | PRIV_REG_WRITE   |  0x0090 | GS_DISPFB2         | 0x0000080000001000 | 0x0000000000000000 | Configured GS_DISPFB2
+   10 |     1 |        38843 | 0x001012d8 | PRIV_REG_WRITE   |  0x0000 | GS_PMODE           | 0x0000000000007027 | 0x0000000000000000 | Configured GS_PMODE
+   11 |     1 |        40713 | 0x00100e50 | GIF_DMA_PACKET   |  0x0012 | DMA_CH2_SEND       | 0x000000000012be00 | 0x0000000000000012 | DMA Ch2 (GIF) normal transfer: MADR=0x0012be00, QWC=18 (288 bytes)
+   12 |     1 |        40713 | 0x00100e50 | GIF_TAG          |  0x0000 | PACKED             | 0x100000000000000f | 0x000000000000000e | GIFTAG: FLG=PACKED(0) NLOOP=15 EOP=0 PRE=0 PRIM=0x0 NREG=1 REGS=0xe
+   13 |     1 |        40713 | 0x00100e50 | GS_INTERNAL_REG  |  0x004c | FRAME_1            | 0x0000000000080000 | 0x0000000000000000 | FRAME_1: FBP=0x0, FBW=8 (512 px), PSM=0x0, FBMSK=0x00000000
+   14 |     1 |        40713 | 0x00100e50 | GS_INTERNAL_REG  |  0x004e | ZBUF_1             | 0x0000000100000000 | 0x0000000000000000 | ZBUF_1: ZBP=0x0, ZPSM=0x0, ZMSK=1
+   15 |     1 |        40713 | 0x00100e50 | GS_INTERNAL_REG  |  0x001a | PRMODECONT         | 0x0000000000000001 | 0x0000000000000000 | PRMODECONT=1 (use PRIM)
+   16 |     1 |        40713 | 0x00100e50 | GS_INTERNAL_REG  |  0x0018 | XYOFFSET_1         | 0x0000800000008000 | 0x0000000000000000 | XYOFFSET_1: OFX=0x8000 (2048.0000), OFY=0x8000 (2048.0000)
+   17 |     1 |        40713 | 0x00100e50 | GS_INTERNAL_REG  |  0x0040 | SCISSOR_1          | 0x01ff000001ff0000 | 0x0000000000000000 | SCISSOR_1: X=[0..511], Y=[0..511]
+   18 |     1 |        40713 | 0x00100e50 | GS_INTERNAL_REG  |  0x0047 | TEST_1             | 0x000000000003200f | 0x0000000000000000 | Updated pixel test state
+   19 |     1 |        40713 | 0x00100e50 | GS_INTERNAL_REG  |  0x003d | GS_REG             | 0x0000000000000000 | 0x0000000000000000 | GS internal register write
+   20 |     1 |        40713 | 0x00100e50 | GS_INTERNAL_REG  |  0x0049 | PABE               | 0x0000000000000000 | 0x0000000000000000 | GS internal register write
+   21 |     1 |        40713 | 0x00100e50 | GS_INTERNAL_REG  |  0x0042 | ALPHA_1            | 0x0000008000000044 | 0x0000000000000000 | GS internal register write
+   22 |     1 |        40713 | 0x00100e50 | GS_INTERNAL_REG  |  0x0045 | DTHE               | 0x0000000000000000 | 0x0000000000000000 | GS internal register write
+   23 |     1 |        40713 | 0x00100e50 | GS_INTERNAL_REG  |  0x0044 | DIMX               | 0x2031203131203120 | 0x0000000000000000 | GS internal register write
+   24 |     1 |        40713 | 0x00100e50 | GS_INTERNAL_REG  |  0x0046 | COLCLAMP           | 0x0000000000000001 | 0x0000000000000000 | GS internal register write
+   25 |     1 |        40713 | 0x00100e50 | GS_INTERNAL_REG  |  0x004a | FBA_1              | 0x0000000000000000 | 0x0000000000000000 | GS internal register write
+   26 |     1 |        40713 | 0x00100e50 | GS_INTERNAL_REG  |  0x0008 | CLAMP_1            | 0x0000000000000005 | 0x0000000000000000 | GS internal register write
+   27 |     1 |        40713 | 0x00100e50 | GS_INTERNAL_REG  |  0x003b | GS_REG             | 0x0000008000000080 | 0x0000000000000000 | GS internal register write
+   28 |     1 |        40713 | 0x00100e50 | GIF_TAG          |  0x0000 | PACKED             | 0x1000000000008001 | 0x000000000000000e | GIFTAG: FLG=PACKED(0) NLOOP=1 EOP=1 PRE=0 PRIM=0x0 NREG=1 REGS=0xe
+   29 |     1 |        40713 | 0x00100e50 | GS_INTERNAL_REG  |  0x0061 | FINISH             | 0x0000000000000001 | 0x000000000000000a | FINISH write -> asserted GS_CSR.FINISH (bit 1)
+   30 |     1 |        40729 | 0x00101ab0 | PRIV_REG_WRITE   |  0x1000 | GS_CSR             | 0x000000000000000a | 0x0000000000000008 | Written GS_CSR
+   31 |     1 |        42851 | 0x00100e50 | GIF_DMA_PACKET   |  0x001b | DMA_CH2_SEND       | 0x000000000012be00 | 0x000000000000001b | DMA Ch2 (GIF) normal transfer: MADR=0x0012be00, QWC=27 (432 bytes)
+   32 |     1 |        42851 | 0x00100e50 | GIF_TAG          |  0x0000 | PACKED             | 0x1000000000000002 | 0x000000000000000e | GIFTAG: FLG=PACKED(0) NLOOP=2 EOP=0 PRE=0 PRIM=0x0 NREG=1 REGS=0xe
+   33 |     1 |        42851 | 0x00100e50 | GS_INTERNAL_REG  |  0x001a | PRMODECONT         | 0x0000000000000000 | 0x0000000000000000 | PRMODECONT=0 (use PRMODE)
+   34 |     1 |        42851 | 0x00100e50 | GS_INTERNAL_REG  |  0x001b | PRMODE             | 0x0000000000000400 | 0x0000000000000000 | Updated PRMODE
+   35 |     1 |        42851 | 0x00100e50 | GIF_TAG          |  0x0000 | PACKED             | 0x1000000000000002 | 0x000000000000000e | GIFTAG: FLG=PACKED(0) NLOOP=2 EOP=0 PRE=0 PRIM=0x0 NREG=1 REGS=0xe
+   36 |     1 |        42851 | 0x00100e50 | GS_INTERNAL_REG  |  0x0000 | PRIM               | 0x0000000000000006 | 0x0000000000000000 | PRIM=0x6 (type=6)
+   37 |     1 |        42851 | 0x00100e50 | GS_INTERNAL_REG  |  0x0001 | RGBAQ              | 0x3f80000080000000 | 0x0000000000000000 | RGBAQ=(R=0, G=0, B=0, A=128, Q=0x3f800000)
+   38 |     1 |        42851 | 0x00100e50 | GIF_TAG          |  0x0001 | REGLIST            | 0x2400000000000010 | 0x0000000000000055 | GIFTAG: FLG=REGLIST(1) NLOOP=16 EOP=0 PRE=0 PRIM=0x0 NREG=2 REGS=0x55
+   39 |     1 |        42851 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x0000000000000000 | 0x0000002000000200 | SPRITE (#1) rect=[0,0)..[32,512) rgba=(0,0,0,128) word=0x80000000 pixels=16384
+   40 |     1 |        42851 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x0000002000000000 | 0x0000004000000200 | SPRITE (#2) rect=[32,0)..[64,512) rgba=(0,0,0,128) word=0x80000000 pixels=16384
+   41 |     1 |        42851 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x0000004000000000 | 0x0000006000000200 | SPRITE (#3) rect=[64,0)..[96,512) rgba=(0,0,0,128) word=0x80000000 pixels=16384
+   42 |     1 |        42851 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x0000006000000000 | 0x0000008000000200 | SPRITE (#4) rect=[96,0)..[128,512) rgba=(0,0,0,128) word=0x80000000 pixels=16384
+   43 |     1 |        42851 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x0000008000000000 | 0x000000a000000200 | SPRITE (#5) rect=[128,0)..[160,512) rgba=(0,0,0,128) word=0x80000000 pixels=16384
+   44 |     1 |        42851 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x000000a000000000 | 0x000000c000000200 | SPRITE (#6) rect=[160,0)..[192,512) rgba=(0,0,0,128) word=0x80000000 pixels=16384
+   45 |     1 |        42851 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x000000c000000000 | 0x000000e000000200 | SPRITE (#7) rect=[192,0)..[224,512) rgba=(0,0,0,128) word=0x80000000 pixels=16384
+   46 |     1 |        42851 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x000000e000000000 | 0x0000010000000200 | SPRITE (#8) rect=[224,0)..[256,512) rgba=(0,0,0,128) word=0x80000000 pixels=16384
+   47 |     1 |        42851 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x0000010000000000 | 0x0000012000000200 | SPRITE (#9) rect=[256,0)..[288,512) rgba=(0,0,0,128) word=0x80000000 pixels=16384
+   48 |     1 |        42851 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x0000012000000000 | 0x0000014000000200 | SPRITE (#10) rect=[288,0)..[320,512) rgba=(0,0,0,128) word=0x80000000 pixels=16384
+   49 |     1 |        42851 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x0000014000000000 | 0x0000016000000200 | SPRITE (#11) rect=[320,0)..[352,512) rgba=(0,0,0,128) word=0x80000000 pixels=16384
+   50 |     1 |        42851 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x0000016000000000 | 0x0000018000000200 | SPRITE (#12) rect=[352,0)..[384,512) rgba=(0,0,0,128) word=0x80000000 pixels=16384
+   51 |     1 |        42851 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x0000018000000000 | 0x000001a000000200 | SPRITE (#13) rect=[384,0)..[416,512) rgba=(0,0,0,128) word=0x80000000 pixels=16384
+   52 |     1 |        42851 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x000001a000000000 | 0x000001c000000200 | SPRITE (#14) rect=[416,0)..[448,512) rgba=(0,0,0,128) word=0x80000000 pixels=16384
+   53 |     1 |        42851 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x000001c000000000 | 0x000001e000000200 | SPRITE (#15) rect=[448,0)..[480,512) rgba=(0,0,0,128) word=0x80000000 pixels=16384
+   54 |     1 |        42851 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x000001e000000000 | 0x0000020000000200 | SPRITE (#16) rect=[480,0)..[512,512) rgba=(0,0,0,128) word=0x80000000 pixels=16384
+   55 |     1 |        42851 | 0x00100e50 | GIF_TAG          |  0x0000 | PACKED             | 0x1000000000000001 | 0x000000000000000e | GIFTAG: FLG=PACKED(0) NLOOP=1 EOP=0 PRE=0 PRIM=0x0 NREG=1 REGS=0xe
+   56 |     1 |        42851 | 0x00100e50 | GS_INTERNAL_REG  |  0x001a | PRMODECONT         | 0x0000000000000001 | 0x0000000000000000 | PRMODECONT=1 (use PRIM)
+   57 |     1 |        42851 | 0x00100e50 | GIF_TAG          |  0x0000 | PACKED             | 0x1000000000008001 | 0x000000000000000e | GIFTAG: FLG=PACKED(0) NLOOP=1 EOP=1 PRE=0 PRIM=0x0 NREG=1 REGS=0xe
+   58 |     1 |        42851 | 0x00100e50 | GS_INTERNAL_REG  |  0x0061 | FINISH             | 0x0000000000000001 | 0x000000000000000a | FINISH write -> asserted GS_CSR.FINISH (bit 1)
+   59 |     1 |        42865 | 0x00101ab0 | PRIV_REG_WRITE   |  0x1000 | GS_CSR             | 0x000000000000000a | 0x0000000000000008 | Written GS_CSR
+   60 |     1 |        42874 | 0x001013e8 | PRIV_REG_WRITE   |  0x1000 | GS_CSR             | 0x0000000000000008 | 0x0000000000000000 | Written GS_CSR
+   61 |     2 |        42876 | 0x001013f0 | VSYNC_FRAME      |  0x0001 | GS_CSR_VSINT       | 0x0000000000000008 | 0x0000000000000010 | Frame #1 completed via guest graph_wait_vsync (GS_CSR=0x8, prims=16, pixels=262144)
+   62 |     2 |        44632 | 0x00100e50 | GIF_DMA_PACKET   |  0x0007 | DMA_CH2_SEND       | 0x000000000012be00 | 0x0000000000000007 | DMA Ch2 (GIF) normal transfer: MADR=0x0012be00, QWC=7 (112 bytes)
+   63 |     2 |        44632 | 0x00100e50 | GIF_TAG          |  0x0000 | PACKED             | 0x1000000000008004 | 0x000000000000000e | GIFTAG: FLG=PACKED(0) NLOOP=4 EOP=1 PRE=0 PRIM=0x0 NREG=1 REGS=0xe
+   64 |     2 |        44632 | 0x00100e50 | GS_INTERNAL_REG  |  0x0000 | PRIM               | 0x0000000000000006 | 0x0000000000000000 | PRIM=0x6 (type=6)
+   65 |     2 |        44632 | 0x00100e50 | GS_INTERNAL_REG  |  0x0001 | RGBAQ              | 0x3f80000080ff0000 | 0x0000000000000000 | RGBAQ=(R=0, G=0, B=255, A=128, Q=0x3f800000)
+   66 |     2 |        44632 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x0000000000000000 | 0x0000006400000064 | SPRITE (#17) rect=[0,0)..[100,100) rgba=(0,0,255,128) word=0x80ff0000 pixels=10000
+   67 |     2 |        44632 | 0x00100e50 | GIF_TAG          |  0x0000 | PACKED             | 0x1000000000008001 | 0x000000000000000e | GIFTAG: FLG=PACKED(0) NLOOP=1 EOP=1 PRE=0 PRIM=0x0 NREG=1 REGS=0xe
+   68 |     2 |        44632 | 0x00100e50 | GS_INTERNAL_REG  |  0x0061 | FINISH             | 0x0000000000000001 | 0x000000000000000a | FINISH write -> asserted GS_CSR.FINISH (bit 1)
+   69 |     2 |        44646 | 0x00101ab0 | PRIV_REG_WRITE   |  0x1000 | GS_CSR             | 0x000000000000000a | 0x0000000000000008 | Written GS_CSR
+   70 |     2 |        44655 | 0x001013e8 | PRIV_REG_WRITE   |  0x1000 | GS_CSR             | 0x0000000000000008 | 0x0000000000000000 | Written GS_CSR
+   71 |     3 |        44657 | 0x001013f0 | VSYNC_FRAME      |  0x0002 | GS_CSR_VSINT       | 0x0000000000000008 | 0x0000000000000011 | Frame #2 completed via guest graph_wait_vsync (GS_CSR=0x8, prims=17, pixels=272144)
+   72 |     3 |        46418 | 0x00100e50 | GIF_DMA_PACKET   |  0x0007 | DMA_CH2_SEND       | 0x000000000012be00 | 0x0000000000000007 | DMA Ch2 (GIF) normal transfer: MADR=0x0012be00, QWC=7 (112 bytes)
+   73 |     3 |        46418 | 0x00100e50 | GIF_TAG          |  0x0000 | PACKED             | 0x1000000000008004 | 0x000000000000000e | GIFTAG: FLG=PACKED(0) NLOOP=4 EOP=1 PRE=0 PRIM=0x0 NREG=1 REGS=0xe
+   74 |     3 |        46418 | 0x00100e50 | GS_INTERNAL_REG  |  0x0000 | PRIM               | 0x0000000000000006 | 0x0000000000000000 | PRIM=0x6 (type=6)
+   75 |     3 |        46418 | 0x00100e50 | GS_INTERNAL_REG  |  0x0001 | RGBAQ              | 0x3f80000080f5000a | 0x0000000000000000 | RGBAQ=(R=10, G=0, B=245, A=128, Q=0x3f800000)
+   76 |     3 |        46418 | 0x00100e50 | PRIM_RASTER      |  0x0006 | GS_PRIM_SPRITE     | 0x000000140000000a | 0x000000780000006e | SPRITE (#18) rect=[20,10)..[120,110) rgba=(10,0,245,128) word=0x80f5000a pixels=10000
+   77 |     3 |        46418 | 0x00100e50 | GIF_TAG          |  0x0000 | PACKED             | 0x1000000000008001 | 0x000000000000000e | GIFTAG: FLG=PACKED(0) NLOOP=1 EOP=1 PRE=0 PRIM=0x0 NREG=1 REGS=0xe
+   78 |     3 |        46418 | 0x00100e50 | GS_INTERNAL_REG  |  0x0061 | FINISH             | 0x0000000000000001 | 0x000000000000000a | FINISH write -> asserted GS_CSR.FINISH (bit 1)
+   79 |     3 |        46432 | 0x00101ab0 | PRIV_REG_WRITE   |  0x1000 | GS_CSR             | 0x000000000000000a | 0x0000000000000008 | Written GS_CSR
+   80 |     3 |        46441 | 0x001013e8 | PRIV_REG_WRITE   |  0x1000 | GS_CSR             | 0x0000000000000008 | 0x0000000000000000 | Written GS_CSR
+   81 |     4 |        46443 | 0x001013f0 | VSYNC_FRAME      |  0x0003 | GS_CSR_VSINT       | 0x0000000000000008 | 0x0000000000000012 | Frame #3 completed via guest graph_wait_vsync (GS_CSR=0x8, prims=18, pixels=282144)
